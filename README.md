@@ -2,9 +2,9 @@
 
 HealthSport es una apicación para monitorizar y analizar constantes vitales, rendimiento y demás puntos clave en actividades deportivas.
 
-Los usuarios podran acceder a sus estadisticas en las distintas competiciones y a ver la programación de eventos.
+Los deportistas podran acceder a sus estadisticas en las distintas competiciones y a ver la programación de eventos.
 
-Los administradores gestionaran esos datos para poder realizar medidas globales de competiciones y realizar eventos para los usuarios.
+Los entrenadores gestionaran esos datos para poder realizar medidas globales de competiciones.
 
 Usuarios, administradores, eventos, estadisticas y datos, objetivos y competiciones.
 
@@ -16,5 +16,5 @@ Sandra Juan San Román - sandrajsr93 s.juan@alumnos.urjc.es
 
 Elena Garcia-Morato Piñan - elenagarciamorato e.garciapi@alumnos.urjc.es
 
-https://github.com/a-aguadoma/HealthSport/blob/master/diagrama_uml.jpeg
-![ScreenShot](https://raw.github.com/a-aguadoma/HealthSport/blob/master/diagrama_uml.jpeg) 
+![Diagrama](https://github.com/a-aguadoma/HealthSport/blob/master/diagrama_uml.jpeg)
+
