@@ -12,4 +12,4 @@ El servicio interno se utilizara para enviar correos y eventos a los usuarios y 
 
 Alberto Aguado Martínez - a-aguadoma a.aguadomar@alumnos.urjc.es
 
-Sandra Juan San Román- sandrajsr93 s.juan@alumnos.urjc.es
+Sandra Juan San Román - sandrajsr93 s.juan@alumnos.urjc.es
