@@ -16,4 +16,5 @@ Sandra Juan San Román - sandrajsr93 s.juan@alumnos.urjc.es
 
 Elena Garcia-Morato Piñan - elenagarciamorato e.garciapi@alumnos.urjc.es
 
-![Alt text](/a-aguadoma/HealthSport/blob/master/diagrama_uml.jpeg?raw=true "Optional Title")
+https://github.com/a-aguadoma/HealthSport/blob/master/diagrama_uml.jpeg
+![ScreenShot](https://raw.github.com/a-aguadoma/HealthSport/blob/master/diagrama_uml.jpeg) 
