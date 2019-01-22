@@ -11,3 +11,5 @@ Usuarios, administradores, eventos, estadisticas y datos, objetivos y competicio
 El servicio interno se utilizara para enviar correos y eventos a los usuarios y procesar datos recogidos en las competiciones.
 
 Alberto Aguado Martínez - a-aguadoma a.aguadomar@alumnos.urjc.es
+
+Sandra Juan San Román- sandrajsr93 s.juan@alumnos.urjc.es
