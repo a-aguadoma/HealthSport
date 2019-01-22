@@ -6,7 +6,7 @@ Los usuarios podran acceder a sus estadisticas en las distintas competiciones y 
 
 Los administradores gestionaran esos datos para poder realizar medidas globales de competiciones y realizar eventos para los usuarios.
 
-ENTIDADES
+Usuarios, administradores, eventos, estadisticas y datos, objetivos y competiciones.
 
 El servicio interno se utilizara para enviar correos y eventos a los usuarios y procesar datos recogidos en las competiciones.
 
