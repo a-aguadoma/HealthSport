@@ -9,10 +9,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 @SpringBootApplication
-public class HealtSportApplication {
+public class HealthSportApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(HealtSportApplication.class, args);
+		SpringApplication.run(HealthSportApplication.class, args);
 	}
 	
 	@RequestMapping("/greeting")
