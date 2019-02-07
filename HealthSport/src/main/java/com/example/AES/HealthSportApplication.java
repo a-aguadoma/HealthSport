@@ -19,6 +19,7 @@ public class HealthSportApplication {
 	public String greeting(Model model, @RequestParam String name) {
 		int [] array = {1,2,3,4};
 		model.addAttribute("pepin", name);
+		model.addAttribute("hola", name);
 		model.addAttribute("array", array);
 		return "greeting_template";
 	}
