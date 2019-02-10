@@ -18,6 +18,8 @@
 		<java.version>1.8</java.version>
 	</properties>
 
+
+	
 	<dependencies>
 		
 		<dependency>
@@ -48,6 +50,15 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
 		</plugins>
+		
+		<resources>
+			<resource>
+        		<directory>src/main/resources</directory>
+      		</resource>
+     	</resources>
+    
 	</build>
+	
+	
 
 </project>

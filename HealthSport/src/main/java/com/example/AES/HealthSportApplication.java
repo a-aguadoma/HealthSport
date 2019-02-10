@@ -15,12 +15,9 @@ public class HealthSportApplication {
 		SpringApplication.run(HealthSportApplication.class, args);
 	}
 	
-	@RequestMapping("/greeting")
+	@RequestMapping("/index")
 	public String greeting(Model model, @RequestParam String name) {
-		int [] array = {1,2,3,4};
-		model.addAttribute("pepin", name);
-		model.addAttribute("array", array);
-		return "greeting_template";
+		return "index";
 	}
 
 }
