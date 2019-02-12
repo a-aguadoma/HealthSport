@@ -20,7 +20,13 @@ public class HealthSportApplication {
 		int [] array = {1,2,3,4};
 		model.addAttribute("pepin", name);
 		model.addAttribute("array", array);
-		return "greeting_template";
+		return "login";
+	}
+	
+	@RequestMapping("/login100-form-btn")
+	public String greeting(Model model, @RequestParam String name, @RequestParam String pass) {
+				
+		return "NewFile";
 	}
 
 }
