@@ -20,5 +20,9 @@ public class HealthSportApplication {
 		return "index";
 	}
 
+	@RequestMapping("/calendario")
+	public String calendario(Model model) {
+		return "calendario";
+	}
 }
 
