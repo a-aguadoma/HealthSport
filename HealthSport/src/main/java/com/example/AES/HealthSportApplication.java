@@ -24,5 +24,9 @@ public class HealthSportApplication {
 	public String calendario(Model model) {
 		return "calendario";
 	}
+	@RequestMapping("/quienessomos")
+	public String quienessomos(Model model) {
+		return "quienessomos";
+	}
 }
 
