@@ -28,5 +28,13 @@ public class HealthSportApplication {
 	public String quienessomos(Model model) {
 		return "quienessomos";
 	}
+	@RequestMapping("/login")
+	public String login(Model model) {
+		return "login";
+	}
+	@RequestMapping("/registro")
+	public String registro(Model model) {
+		return "registro";
+	}
 }
 
