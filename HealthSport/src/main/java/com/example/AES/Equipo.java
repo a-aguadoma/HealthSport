@@ -21,10 +21,10 @@ public class Equipo {
 	private String competicion;
 	private String idEquip;
 	
-	@OneToMany(mappedBy = "Equipo")
+	@OneToMany(mappedBy = "equipo")
 	private List<Deportista> deportistas;
 	
-	@OneToOne(mappedBy = "Equipo")
+	@OneToOne(mappedBy = "equipo")
 	private Entrenador entrenador;
 	
 	

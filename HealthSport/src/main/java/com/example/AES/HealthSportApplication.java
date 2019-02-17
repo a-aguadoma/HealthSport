@@ -36,5 +36,9 @@ public class HealthSportApplication {
 	public String registro(Model model) {
 		return "registro";
 	}
+	@RequestMapping("/deportista")
+	public String deportista(Model model) {
+		return "deportista";
+	}
 }
 
