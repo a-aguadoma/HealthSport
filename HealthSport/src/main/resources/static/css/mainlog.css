@@ -4,22 +4,15 @@
 
 /*//////////////////////////////////////////////////////////////////
 [ FONT ]*/
-
-@font-face {
-  font-family: Ubuntu-Regular;
-  src: url('../fonts/ubuntu/Ubuntu-Regular.ttf'); 
-}
-
-@font-face {
-  font-family: Ubuntu-Bold;
-  src: url('../fonts/ubuntu/Ubuntu-Bold.ttf'); 
-}
-
-@font-face {
-  font-family: JosefinSans-Bold;
-  src: url('../fonts/JosefinSans/JosefinSans-Bold.ttf'); 
-}
-
+@import "font-awesome.css";
+@import url(//fonts.googleapis.com/css?family=Open+Sans:400);
+@import url(//fonts.googleapis.com/css?family=Open+Sans:300);
+@import url(//fonts.googleapis.com/css?family=Open+Sans:600);
+@import url(//fonts.googleapis.com/css?family=Open+Sans:400italic);
+@import url(//fonts.googleapis.com/css?family=Economica:400);
+@import url(//fonts.googleapis.com/css?family=Economica:700);
+@import url(//fonts.googleapis.com/css?family=Open+Sans+Condensed:700);
+@import url(//fonts.googleapis.com/css?family=BenchNine:700);
 
 
 /*//////////////////////////////////////////////////////////////////
