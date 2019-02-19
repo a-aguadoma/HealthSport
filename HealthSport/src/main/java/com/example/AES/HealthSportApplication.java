@@ -16,7 +16,7 @@ public class HealthSportApplication {
 	}
 	
 	@RequestMapping("/index")
-	public String greeting(Model model, @RequestParam String name) {
+	public String greeting(Model model) {
 		return "index";
 	}
 
