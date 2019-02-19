@@ -15,7 +15,7 @@ public class HealthSportApplication {
 		SpringApplication.run(HealthSportApplication.class, args);
 	}
 	
-	@RequestMapping("/index")
+	@RequestMapping("/index.html")
 	public String greeting(Model model) {
 		return "index";
 	}
@@ -35,6 +35,10 @@ public class HealthSportApplication {
 	@RequestMapping("/registro")
 	public String registro(Model model) {
 		return "registro";
+	}
+	@RequestMapping("/deportista")
+	public String deportista(Model model) {
+		return "deportista";
 	}
 }
 

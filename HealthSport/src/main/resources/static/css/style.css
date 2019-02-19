@@ -1,3 +1,4 @@
+
 @import "reset.css";
 @import "grid.css";
 @import "font-awesome.css";
@@ -82,7 +83,7 @@ h7{
 	color: #86c8b4;
     font-size: 42px;
     line-height: 42px;
-    margin-bottom: 21px;
+    margin-bottom: 15px;
    
 	
 }

@@ -1,0 +1,50 @@
+
+@import "reset.css";
+@import "grid.css";
+@import "font-awesome.css";
+@import "superfish.css";
+@import url(//fonts.googleapis.com/css?family=Open+Sans:400);
+@import url(//fonts.googleapis.com/css?family=Open+Sans:300);
+@import url(//fonts.googleapis.com/css?family=Open+Sans:600);
+@import url(//fonts.googleapis.com/css?family=Open+Sans:400italic);
+@import url(//fonts.googleapis.com/css?family=Economica:400);
+@import url(//fonts.googleapis.com/css?family=Economica:700);
+@import url(//fonts.googleapis.com/css?family=Open+Sans+Condensed:700);
+@import url(//fonts.googleapis.com/css?family=BenchNine:700);
+
+
+/**Table**/
+  .grid25{
+    width: 100%;
+    overflow: hidden;  
+    background: #86c8b4;
+    color: #024457;
+    padding: 15px;
+    border-collapse: collapse;
+    text-align: center;
+    border: 2px solid #167F92;
+    
+  
+   
+    tr {
+      border: 2px solid #167F92; 
+      background: #167F92;
+      padding: 15px;
+    
+      &:nth-child(odd) { 
+        background-color: #EAF3F3;
+        
+      }      
+     
+    } 
+
+
+}
+
+table,th,td {
+	border: 2px solid #167F92;
+    background: #fff;
+    color: #024457;
+    
+    
+}
