@@ -40,5 +40,9 @@ public class HealthSportApplication {
 	public String deportista(Model model) {
 		return "deportista";
 	}
+	@RequestMapping("/entrenador")
+	public String entrenador(Model model) {
+		return "entrenador";
+	}
 }
 
