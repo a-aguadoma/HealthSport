@@ -62,13 +62,13 @@
 						
 						<body>					
 						<div class="inner">						
-							<form action="">
+							<form action="saveuser" method="post">
 								<h8>Formulario Registro</h8>
 								<div class="form-group">
-									<input type="text" placeholder="Nombre" class="form-control">
-									<input type="text" placeholder="Apellidos" class="form-control">
+									<input type="text" name='Nombre' placeholder="Nombre" class="form-control">
+								  	<input type="text" name='Apellido' placeholder="Apellido" class="form-control">
 								</div>
-								<div class="form-wrapper">
+							<!--  	<div class="form-wrapper">
 									<input type="text" placeholder="Nombre de usuario" class="form-control">
 									<i class="zmdi zmdi-account"></i>
 								</div>
@@ -84,23 +84,23 @@
 										<option value="other">Otro</option>
 									</select>
 									<i class="zmdi zmdi-caret-down" style="font-size: 17px"></i>
-								</div>
+								</div> -->
 								<div class="form-wrapper">
-									<input type="password" placeholder="Password" class="form-control">
+									<input type="password" name='Password' placeholder="Password" class="form-control">
 									<i class="zmdi zmdi-lock"></i>
-								</div>
-								<div class="form-wrapper">
+								</div> 
+							<!--  	<div class="form-wrapper">
 									<input type="Contraseña" placeholder="Confirmar Contraseña" class="form-control">
 									<i class="zmdi zmdi-lock"></i>
-								</div>
-								<button>Registrar
-									<i class="zmdi zmdi-arrow-right"></i>
+								</div> -->
+								<button class ="zmdi zmdi-arrow-right">
+								<input type="submit" value="Registro" />
+							<!-- 	<li><a href="/index.html">Registro</a></li> -->
 								</button>
 							</form>
 						</div>
 					</div>
-		
-						
+											
 						
 					</div>
 						<div class="clear"></div>
