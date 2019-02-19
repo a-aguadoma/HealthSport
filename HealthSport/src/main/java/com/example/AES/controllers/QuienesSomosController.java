@@ -1,4 +1,4 @@
-package com.example.AES;
+package com.example.AES.controllers;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import javax.annotation.PostConstruct;

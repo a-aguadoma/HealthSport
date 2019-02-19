@@ -1,4 +1,4 @@
-package com.example.AES;
+package com.example.AES.controllers;
 import javax.annotation.PostConstruct;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -21,18 +21,17 @@ import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
-public class CalendarioController {
-	
+public class RegistroController {
 	@GetMapping("/")
 	public String index(){
 		
 		return "index";
 	}
-	
-	@GetMapping("/index")
-    public String calendario () {
+	@GetMapping("/registro")
+	public String registro () {
 	   
-	return "calendario";
-    }
+	return "registro";
+	}
 
 }
+
