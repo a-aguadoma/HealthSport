@@ -65,6 +65,15 @@ public class Deportista {
 		this.correo = correo;
 	}
 
+	public Equipo getEquipo(){
+		return equipo;
+	}
+	
+	public void setEquipo(Equipo equipo) {
+		this.equipo=equipo;
+	}
+	
+	
 	@Override
 	public String toString() {
 		return "Deportista [nombre=" + nombre + ", apellido=" + apellido + ", pass=" + pass + "]";
