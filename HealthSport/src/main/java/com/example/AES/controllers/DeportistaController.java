@@ -16,22 +16,22 @@ import com.example.AES.repositories.*;
 
 import com.example.AES.Deportista;
 
-
+@Controller
 public class DeportistaController {
 	
 	@Autowired
 	DeportistaRepository deportistaRepository;
 
 	@GetMapping("/deportista")
-		public String perfilCliente (Model model, HttpServletRequest request) {
+		public String Deportista (Model model, HttpServletRequest request) {
 		
-			Deportista deportista = (Deportista) deportistaRepository.findByNombre(request.getUserPrincipal().getName());
+			Deportista deportista = (Deportista) deportistaRepository.findByEmail(request.getUserPrincipal().getName());
 			model.addAttribute("nombreDeportista", " " + deportista.getNombre());
 			model.addAttribute("apellidoDeportista", " " + deportista.getApellido());
-			model.addAttribute("emailDeportista", " " + deportista.getCorreo());
+			model.addAttribute("emailDeportista", " " + deportista.getEmail());
 			model.addAttribute("", " " + deportista.getEquipo());
 			model.addAttribute("Registrado como", " " + "Deportista");			
-			return "perfilDeportista";
+			return "Deportista";
 		
 	}
 

@@ -19,8 +19,7 @@ public class Deportista {
 	
 	private String nombre;
 	private String apellido;
-	private String usuario;
-	private String correo;
+	private String email;
 	private String pass;
 	
 	@ManyToOne
@@ -31,9 +30,10 @@ public class Deportista {
 	
 	public Deportista() {}
 	
-	public Deportista(String nombre, String apellido, String pass) {
+	public Deportista(String nombre, String apellido, String email, String pass) {
 		this.nombre=nombre;
 		this.apellido=apellido;
+		this.email=email;
 		this.pass=pass;
 	}
 	
@@ -49,20 +49,15 @@ public class Deportista {
 	public void setApellido(String apellido) {
 		this.apellido = apellido;
 	}
-	public String getUsuario() {
-		return usuario;
+
+
+
+	public String getEmail() {
+		return email;
 	}
 
-	public void setUsuario(String usuario) {
-		this.usuario = usuario;
-	}
-
-	public String getCorreo() {
-		return correo;
-	}
-
-	public void setCorreo(String correo) {
-		this.correo = correo;
+	public void setEmail(String correo) {
+		this.email = correo;
 	}
 
 	public Equipo getEquipo(){
