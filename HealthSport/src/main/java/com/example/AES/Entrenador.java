@@ -15,6 +15,8 @@ public class Entrenador {
 	
 	private String nombre;
 	private String apellido;
+	private String usuario;
+	private String correo;
 	private String pass;
 	private String passEq;
 	
@@ -47,6 +49,21 @@ public class Entrenador {
 	}
 	public void setPassEq(String passEq) {
 		this.passEq = passEq;
+	}
+	public String getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(String usuario) {
+		this.usuario = usuario;
+	}
+
+	public String getCorreo() {
+		return correo;
+	}
+
+	public void setCorreo(String correo) {
+		this.correo = correo;
 	}
 	
 	

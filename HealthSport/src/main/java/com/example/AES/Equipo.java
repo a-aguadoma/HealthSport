@@ -8,6 +8,9 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
+import javax.persistence.ManyToMany;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 public class Equipo {
@@ -21,11 +24,17 @@ public class Equipo {
 	private String competicion;
 	private String idEquip;
 	
+	@JsonIgnore
 	@OneToMany(mappedBy = "equipo")
 	private List<Deportista> deportistas;
 	
+	@JsonIgnore
 	@OneToOne(mappedBy = "equipo")
 	private Entrenador entrenador;
+	
+	@JsonIgnore
+	@ManyToMany(mappedBy = "participantes")
+	private List<Evento> eventos;
 	
 	
 	public Equipo() {}

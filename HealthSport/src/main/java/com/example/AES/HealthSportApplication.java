@@ -15,8 +15,8 @@ public class HealthSportApplication {
 		SpringApplication.run(HealthSportApplication.class, args);
 	}
 	
-	@RequestMapping("/index")
-	public String greeting(Model model, @RequestParam String name) {
+	@RequestMapping("/index.html")
+	public String greeting(Model model) {
 		return "index";
 	}
 

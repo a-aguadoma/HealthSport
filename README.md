@@ -1,6 +1,6 @@
 # HealthSport
 
-HealthSport es una apicación para monitorizar y analizar constantes vitales, rendimiento y demás puntos clave en actividades deportivas.
+HealthSport es una aplicación para monitorizar y analizar constantes vitales, rendimiento y demás puntos clave en actividades deportivas.
 
 Parte pública - Los deportistas podran acceder a sus estadisticas en las distintas competiciones y a ver la programación de eventos.
 
