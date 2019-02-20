@@ -38,10 +38,10 @@ public class HealthSportApplication {
 	public String registro(Model model) {
 		return "registro";
 	}
-	@RequestMapping("/deportista")
+	/*@RequestMapping("/deportista")
 	public String deportista(Model model) {
 		return "deportista";
-	}
+	}*/
 	@RequestMapping("/entrenador")
 	public String entrenador(Model model) {
 		return "entrenador";

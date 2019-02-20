@@ -22,16 +22,16 @@ public class DeportistaController {
 	@Autowired
 	DeportistaRepository deportistaRepository;
 
-	@GetMapping("/deportista")
-		public String Deportista (Model model, HttpServletRequest request) {
+	@PostMapping("/deportista")
+	public String Deportista (Model model, @RequestParam String username,@RequestParam String pass, HttpServletRequest request) {
 		
-			Deportista deportista = (Deportista) deportistaRepository.findByEmail(request.getUserPrincipal().getName());
+			Deportista deportista = (Deportista) deportistaRepository.findByEmail(username);
 			model.addAttribute("nombreDeportista", " " + deportista.getNombre());
-			model.addAttribute("apellidoDeportista", " " + deportista.getApellido());
-			model.addAttribute("emailDeportista", " " + deportista.getEmail());
-			model.addAttribute("", " " + deportista.getEquipo());
-			model.addAttribute("Registrado como", " " + "Deportista");			
-			return "Deportista";
+			//model.addAttribute("apellidoDeportista", " " + deportista.getApellido());
+			model.addAttribute("emailCliente", " " + deportista.getEmail());
+			model.addAttribute("equipoCliente", " " + deportista.getEquipo());
+			//model.addAttribute("Registrado como", " " + "Deportista");			
+			return "deportista";
 		
 	}
 

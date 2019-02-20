@@ -16,10 +16,10 @@ public class LoginController {
 		return "login";
     }
 	
-	@RequestMapping("/deportista")
+	/*@RequestMapping("/deportista")
 	public String deportista(Model model) {
 		return "deportista";
-	}
+	}*/
 	
 	@RequestMapping("/entrenador")
 	public String entrenador(Model model) {

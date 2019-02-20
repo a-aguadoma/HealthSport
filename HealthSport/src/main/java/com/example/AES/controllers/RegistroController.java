@@ -9,7 +9,7 @@ import com.example.AES.repositories.*;
 
 import com.example.AES.Deportista;
 
-import com.example.AES.
+//import com.example.AES.
 
 import javax.annotation.PostConstruct;
 import javax.servlet.http.HttpServletRequest;
@@ -22,8 +22,7 @@ import java.util.List;
 import javax.annotation.PostConstruct;
 
 import org.springframework.beans.factory.annotation.Autowired;
-
-
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -33,15 +32,14 @@ import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
 
-
+@Controller
 public class RegistroController {
 	
 	@Autowired
 	DeportistaRepository deportistaRepository;
 	
 
-	@PostMapping(value="/nuevoDeportista")
-	
+	@PostMapping(value="/nuevoDeportista")	
 	public String registroDeportista(@RequestParam String nombre,@RequestParam String apellido, @RequestParam String email, @RequestParam String password) {
 		
 		
