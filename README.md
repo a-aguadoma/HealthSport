@@ -1,10 +1,12 @@
 # HealthSport
 
+##Fase 1:
+
 HealthSport es una aplicación para monitorizar y analizar constantes vitales, rendimiento y demás puntos clave en actividades deportivas.
 
-Parte pública - Los deportistas podran acceder a sus estadisticas en las distintas competiciones y a ver la programación de eventos.
+Parte pública - Los invitados recibiran informacion acerca del funcionamiento de la app y podran registrarse en ésta, asi como consultar el equipo de desarrollo.
 
-Parte privada - Los entrenadores/administradores gestionaran esos datos para poder realizar medidas globales de competiciones.
+Parte privada - Los entrenadores apuntaran a sus equipos a diferentes competiciones, y podran consultar sus integrantes y estadisticas. Los deportistas podran consultar los eventos en los que han participado y las estadisticas obtenidas en éstos.
 
 El servicio interno se utilizara para enviar correos y eventos a los usuarios y procesar datos recogidos en las competiciones.
 
@@ -24,3 +26,4 @@ Para cooordinarse, el equipo utilizará la herrramienta Trello: https://trello.c
 
 ![Diagrama](https://github.com/a-aguadoma/HealthSport/blob/master/diagrama_uml.jpeg)
 
+##Fase 2
