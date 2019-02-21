@@ -42,3 +42,19 @@ Para cooordinarse, el equipo utilizará la herrramienta Trello: https://trello.c
 Pagina principal desde la que se presenta minimamente la aplicación, el equipo y en la que encontramos los enlaces a las paginas principales.
 
 ![Index](https://github.com/a-aguadoma/HealthSport/blob/master/index.jpeg)
+
+### LOGIN
+Página de inicio de sesion, en la cual iniciaran sesion tanto los deportistas como los entrenadores.
+
+![Login](https://github.com/a-aguadoma/HealthSport/blob/master/login.jpeg)
+
+### REGISTRO
+Página de registro en la cual los usuarios, tanto deportisca como entrenador, obtendran sus credenciales y serán registrados en la Base de Datos.
+
+![registro](https://github.com/a-aguadoma/HealthSport/blob/master/registro.jpeg)
+
+### DEPORTISTA
+
+![deportista](https://github.com/a-aguadoma/HealthSport/blob/master/deportista.jpeg)
+
+
