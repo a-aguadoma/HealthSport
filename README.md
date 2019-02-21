@@ -1,6 +1,6 @@
 # HealthSport
 
-##Fase 1:
+## Fase 1:
 
 HealthSport es una aplicación para monitorizar y analizar constantes vitales, rendimiento y demás puntos clave en actividades deportivas.
 
@@ -24,6 +24,10 @@ Para cooordinarse, el equipo utilizará la herrramienta Trello: https://trello.c
 
 -Entidades. Las entidades que forman el programa son: Entrenador, Deportista, Equipo, Constantes Vitales, Estadisticas Grupales y Competiciones, distribuidas de la siguiente forma:
 
-![Diagrama](https://github.com/a-aguadoma/HealthSport/blob/master/diagrama_uml.jpeg)
+![DiagramaUML1](https://github.com/a-aguadoma/HealthSport/blob/master/diagrama_uml.jpeg)
 
-##Fase 2
+
+## Fase 2
+
+![DiagramaER](https://github.com/a-aguadoma/HealthSport/blob/master/BaseDeDatos.jpeg)
+![DiagramaNavegacion](https://github.com/a-aguadoma/HealthSport/blob/master/Vistas.jpeg)
