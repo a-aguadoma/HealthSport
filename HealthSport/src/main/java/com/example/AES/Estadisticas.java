@@ -32,7 +32,6 @@ public class Estadisticas {
 		this.lpm=lpm;
 		this.distancia=distancia;
 		this.tiempo=tiempo;
-		this.velocidad=velocidad;
 		this.otros=otros;
 		
 	}
@@ -64,13 +63,7 @@ public class Estadisticas {
 		this.tiempo=tiempo;
 	}
 	
-	public float getVelocidad() {
-		return velocidad;
-	}
-	
-	public void setVelocidad(float velocidad) {
-		this.velocidad=velocidad;
-	}
+
 	
 	public String getOtros() {
 		return otros;

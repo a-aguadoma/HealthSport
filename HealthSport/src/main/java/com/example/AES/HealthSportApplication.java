@@ -1,6 +1,5 @@
 package com.example.AES;
 
-import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -34,10 +33,7 @@ public class HealthSportApplication {
 	public String login(Model model) {
 		return "login";
 	}
-	@RequestMapping("/registro")
-	public String registro(Model model) {
-		return "registro";
-	}
+
 	/*@RequestMapping("/deportista")
 	public String deportista(Model model) {
 		return "deportista";
@@ -45,6 +41,20 @@ public class HealthSportApplication {
 	@RequestMapping("/entrenador")
 	public String entrenador(Model model) {
 		return "entrenador";
+	}
+	@RequestMapping("/registroGeneral")
+	public String registroGeneral(Model model) {
+		return "registroGeneral";
+	}
+	
+	@RequestMapping("/registroUsuario")
+	public String registroUsuario(Model model) {
+		return "registroUsuario";
+	}
+	
+	@RequestMapping("/registroEntrenador")
+	public String registroEntrenador(Model model) {
+		return "registroEntrenador";
 	}
 }
 

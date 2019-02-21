@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Home</title>
+		<meta charset="utf-8">
+		<meta name="format-detection" content="telephone=no" />
+		<link rel="icon" href="images/favicon.ico">
+		<link rel="shortcut icon" href="images/favicon.ico" />
+		<link rel="stylesheet" href="css/countdown.css">
+		<link rel="stylesheet" href="css/style_common.css" />
+		<link rel="stylesheet" href="css/style4.css" />
+		<link rel="stylesheet" href="css/camera.css">
+		<link rel="stylesheet" href="css/style.css">
+		<script src="js/jquery.js"></script>
+		<script src="js/jquery-migrate-1.2.1.js"></script>
+		<script src="js/script.js"></script>
+		<script src="js/superfish.js"></script>
+		<script src="js/jquery.ui.totop.js"></script>
+		<script src="js/jquery.equalheights.js"></script>
+		<script src="js/jquery.mobilemenu.js"></script>
+		<script src="js/camera.js"></script>
+		<!--[if (gt IE 9)|!(IE)]><!-->
+		<script src="js/jquery.mobile.customized.min.js"></script>
+		<!--<![endif]-->
+		<script>
+			$(document).ready(function(){
+				jQuery('#camera_wrap').camera({
+					loader: false,
+					pagination: false ,
+					minHeight: '444',
+					thumbnails: false,
+					height: '27.86458333333333%',
+					caption: true,
+					navigation: true,
+					fx: 'simpleFade'
+				});
+				$().UItoTop({ easingType: 'easeOutQuart' });
+			});
+		</script>
+
+	</head>
+	<body class="page1" id="top">
+		
+		<div class="main">
+		
+<!--==============================header=================================-->
+			<header>
+				<div class="container_12">
+					<div class="grid_12">
+						<!-- <div class="socials">
+							<a href="#" class="fa fa-twitter"></a>
+							<a href="#" class="fa fa-facebook"></a>
+							<a href="#" class="fa fa-google-plus"></a>
+							<a href="#" class="fa fa-instagram"></a>
+						</div> -->
+						<h1>
+							<a href="index.html">
+								<img src="images/logo.png" alt="HealthSport">
+							</a>
+						</h1>
+						<div class="menu_block">
+							<nav class="horizontal-nav full-width horizontalNav-notprocessed">
+								<ul class="sf-menu">
+									<li class="current"><a href="index.html">Home</a></li>
+									<li><a href="/registro">Registro</a></li>
+									<li><a href="/login">Login</a></li>
+									<li><a href="/quienessomos">¿Quienes somos?</a></li>
+									
+								</ul>
+							</nav>
+							<div class="clear"></div>
+						</div>
+					</div>
+					<div class="clear"></div>
+				</div>
+			</header>
+			<div class="slider_wrapper">
+
+<!--==============================Content=================================-->
+				<div class="container_12">
+					<div class="grid_12">
+						<h2 class="center">HealthSport</h2>
+						<div class="count_wrap">
+							<div class="clear"></div>
+							<a href="/registroDeportista">Registrate como deportista</a>
+						</div>
+							<div class="count_wrap">
+							<div class="clear"></div>
+							<a href="/registroEntrenador">Registrate como entrenador</a>
+							<div class="clear"></div>
+						</div>
+					</div>
+					
+					<div class="clear"></div>
+				</div>
+				
+				
+			</div>
+		</div>
+<!--==============================footer=================================-->
+		<footer>
+			<div class="container_12">
+				<div class="clear"></div>
+				<div class="grid_12">
+					<div class="clear"></div>
+					<div class="f_logo">
+						<a href="index.html">HealthSport</a>
+					</div>
+					<div class="f_contacts">
+						<a href="#" class="mail_link"><span class="fa fa-envelope"></span> healthsport@gmail.com</a>
+						<!-- <div class="f_phone"><span class="fa fa-phone"></span>+1 800 559 6580</div> -->
+					</div>
+					
+					
+					<div class="copy">
+						
+					</div>
+				</div>
+				<div class="clear"></div>
+			</div>
+		</footer>
+		<script src="js/jquery.countdown.js"></script>
+		<script src="js/cd_config.js"></script>
+		<script src="js/modernizr.custom.69142.js"></script>
+		<script type="text/javascript">
+			Modernizr.load({
+				test: Modernizr.csstransforms3d && Modernizr.csstransitions,
+				yep : ['http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js','js/jquery.hoverfold.js'],
+				nope: 'css/fallback.css',
+				callback : function( url, result, key ) {
+					if( url === 'js/jquery.hoverfold.js' ) {
+						$( '#grid' ).hoverfold();
+					}
+				}
+			});
+		</script>
+		
+	</body>
+</html>
