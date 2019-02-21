@@ -35,3 +35,10 @@ Para cooordinarse, el equipo utilizará la herrramienta Trello: https://trello.c
 
 ### Diagrama de Navegación
 ![DiagramaNavegacion](https://github.com/a-aguadoma/HealthSport/blob/master/Vistas.jpeg)
+
+### PAGINAS PRINCIPALES
+
+### INDEX
+Pagina principal desde la que se presenta minimamente la aplicación, el equipo y en la que encontramos los enlaces a las paginas principales.
+
+![Index](https://github.com/a-aguadoma/HealthSport/blob/master/index.jpeg)
