@@ -21,8 +21,7 @@ public class Equipo {
 	
 	private String nombre;
 	private String deporte;
-	private String competicion;
-	private String idEquip;
+	private String clave;
 	
 	@JsonIgnore
 	@OneToMany(mappedBy = "equipo")
@@ -39,37 +38,78 @@ public class Equipo {
 	
 	public Equipo() {}
 	
-	public Equipo(String nombre, String deporte, String competicion, String idEquip) {
+	public Equipo(String nombre, String deporte, String claveEquipo, List<Deportista> deportistas, Entrenador entrenador, List<Evento> eventos) {
 		this.nombre = nombre;
 		this.deporte = deporte;
-		this.competicion = competicion;
-		this.idEquip = idEquip;
+		this.clave = claveEquipo;
+		this.deportistas=deportistas;
+		this.entrenador=entrenador;
+		this.eventos=eventos;
 	}
-	
+
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
+
 	public String getNombre() {
 		return nombre;
 	}
+
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
+
 	public String getDeporte() {
 		return deporte;
 	}
+
 	public void setDeporte(String deporte) {
 		this.deporte = deporte;
 	}
-	public String getCompeticion() {
-		return competicion;
+
+	public String getClaveEquipo() {
+		return clave;
 	}
-	public void setCompeticion(String competicion) {
-		this.competicion = competicion;
+
+	public void setClaveEquipo(String claveEquipo) {
+		this.clave = claveEquipo;
 	}
-	public String getIdEquip() {
-		return idEquip;
+
+	public List<Deportista> getDeportistas() {
+		return deportistas;
 	}
-	public void setIdEquip(String idEquip) {
-		this.idEquip = idEquip;
+
+	public void setDeportistas(List<Deportista> deportistas) {
+		this.deportistas = deportistas;
 	}
+
+	public Entrenador getEntrenador() {
+		return entrenador;
+	}
+
+	public void setEntrenador(Entrenador entrenador) {
+		this.entrenador = entrenador;
+	}
+
+	public List<Evento> getEventos() {
+		return eventos;
+	}
+
+	public void setEventos(List<Evento> eventos) {
+		this.eventos = eventos;
+	}
+
+	@Override
+	public String toString() {
+		return "Equipo [id=" + id + ", nombre=" + nombre + ", deporte=" + deporte + ", claveEquipo=" + clave
+				+ ", deportistas=" + deportistas + ", entrenador=" + entrenador + ", eventos=" + eventos + "]";
+	}
+	
+	
 	
 
 }

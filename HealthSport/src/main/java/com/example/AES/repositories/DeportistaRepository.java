@@ -22,6 +22,7 @@ public interface DeportistaRepository extends JpaRepository<Deportista, Long> {
 	
 	
 	List<Deportista> findByNombre(String nombre);
+	
 	Deportista getByNombre(String nombre);
 	
 	

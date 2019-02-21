@@ -18,7 +18,6 @@ public class Deportista {
 	private long id;
 	
 	private String nombre;
-	private String apellido;
 	private String email;
 	private String pass;
 	
@@ -30,48 +29,68 @@ public class Deportista {
 	
 	public Deportista() {}
 	
-	public Deportista(String nombre, String apellido, String email, String pass) {
+	public Deportista(String nombre, String email, String pass, Equipo equipo, List<Estadisticas> estadisticas) {
 		this.nombre=nombre;
-		this.apellido=apellido;
 		this.email=email;
 		this.pass=pass;
+		this.equipo=equipo;
+		this.estadisticas=estadisticas;
 	}
-	
+
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
+
 	public String getNombre() {
 		return nombre;
 	}
+
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
-	public String getApellido() {
-		return apellido;
-	}
-	public void setApellido(String apellido) {
-		this.apellido = apellido;
-	}
-
-
 
 	public String getEmail() {
 		return email;
 	}
 
-	public void setEmail(String correo) {
-		this.email = correo;
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
-	public Equipo getEquipo(){
+	public String getPass() {
+		return pass;
+	}
+
+	public void setPass(String pass) {
+		this.pass = pass;
+	}
+
+	public Equipo getEquipo() {
 		return equipo;
 	}
-	
+
 	public void setEquipo(Equipo equipo) {
-		this.equipo=equipo;
+		this.equipo = equipo;
 	}
-	
-	
+
+	public List<Estadisticas> getEstadisticas() {
+		return estadisticas;
+	}
+
+	public void setEstadisticas(List<Estadisticas> estadisticas) {
+		this.estadisticas = estadisticas;
+	}
+
 	@Override
 	public String toString() {
-		return "Deportista [nombre=" + nombre + ", apellido=" + apellido + ", pass=" + pass + "]";
+		return "Deportista [id=" + id + ", nombre=" + nombre + ", email=" + email + ", pass=" + pass + ", equipo="
+				+ equipo + ", estadisticas=" + estadisticas + "]";
 	}
+	
+	
 	
 }

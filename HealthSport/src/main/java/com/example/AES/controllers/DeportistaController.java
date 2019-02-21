@@ -27,10 +27,10 @@ public class DeportistaController {
 		
 			Deportista deportista = (Deportista) deportistaRepository.findByEmail(username);
 			model.addAttribute("nombreDeportista", " " + deportista.getNombre());
-			//model.addAttribute("apellidoDeportista", " " + deportista.getApellido());
+			//model.addAttribute("apellidoDeportista", " " + deportista.getApellido());			
+			model.addAttribute("equipoCliente", " " + deportista.getEquipo().getNombre());
 			model.addAttribute("emailCliente", " " + deportista.getEmail());
-			model.addAttribute("equipoCliente", " " + deportista.getEquipo());
-			//model.addAttribute("Registrado como", " " + "Deportista");			
+			//model.addAttribute("Registrado como", " " + "Deportista");		
 			return "deportista";
 		
 	}

@@ -14,22 +14,19 @@ public class Entrenador {
 	private long id;
 	
 	private String nombre;
-	private String apellido;
-	private String usuario;
-	private String correo;
+	private String email;
 	private String pass;
-	private String passEq;
 	
 	@OneToOne
 	private Equipo equipo;
 	
 	public Entrenador() {}
 	
-	public Entrenador(String nombre, String apellido, String pass, String passEq) {
+	public Entrenador(String nombre, String pass, String email, Equipo equipo) {
 		this.nombre=nombre;
-		this.apellido=apellido;
 		this.pass=pass;
-		this.passEq=passEq;
+		this.email=email;
+		this.equipo=equipo;
 	}
 	
 	public String getNombre() {
@@ -38,32 +35,42 @@ public class Entrenador {
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
-	public String getApellido() {
-		return apellido;
-	}
-	public void setApellido(String apellido) {
-		this.apellido = apellido;
-	}
-	public String getPassEq() {
-		return passEq;
-	}
-	public void setPassEq(String passEq) {
-		this.passEq = passEq;
-	}
-	public String getUsuario() {
-		return usuario;
+	public long getId() {
+		return id;
 	}
 
-	public void setUsuario(String usuario) {
-		this.usuario = usuario;
+	public void setId(long id) {
+		this.id = id;
 	}
 
-	public String getCorreo() {
-		return correo;
+	public String getEmail() {
+		return email;
 	}
 
-	public void setCorreo(String correo) {
-		this.correo = correo;
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public String getPass() {
+		return pass;
+	}
+
+	public void setPass(String pass) {
+		this.pass = pass;
+	}
+
+	public Equipo getEquipo() {
+		return equipo;
+	}
+
+	public void setEquipo(Equipo equipo) {
+		this.equipo = equipo;
+	}
+
+	@Override
+	public String toString() {
+		return "Entrenador [id=" + id + ", nombre=" + nombre + ", email=" + email + ", pass=" + pass + ", equipo="
+				+ equipo + "]";
 	}
 	
 	
