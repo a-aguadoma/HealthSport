@@ -24,10 +24,14 @@ Para cooordinarse, el equipo utilizará la herrramienta Trello: https://trello.c
 
 -Entidades. Las entidades que forman el programa son: Entrenador, Deportista, Equipo, Constantes Vitales, Estadisticas Grupales y Competiciones, distribuidas de la siguiente forma:
 
+### Diagrama UML1
 ![DiagramaUML1](https://github.com/a-aguadoma/HealthSport/blob/master/diagrama_uml.jpeg)
 
 
 ## Fase 2
 
+### Diagrama Entidad/Relación
 ![DiagramaER](https://github.com/a-aguadoma/HealthSport/blob/master/BaseDeDatos.jpeg)
+
+### Diagrama de Navegación
 ![DiagramaNavegacion](https://github.com/a-aguadoma/HealthSport/blob/master/Vistas.jpeg)
