@@ -42,8 +42,8 @@
 						<div class="menu_block">
 							<nav class="horizontal-nav full-width horizontalNav-notprocessed">
 								<ul class="sf-menu">
-									<li class="current"><a href="/deportistaEjemplo">Espacio personal</a></li>
-									<li><a href="/equipoEjemplo">Equipo</a></li>
+									<li><a href="/deportistaEjemplo">Espacio personal</a></li>
+									<li class="current"><a href="/equipoEjemplo">Equipo</a></li>
 											
 								</ul>
 							</nav>
@@ -56,22 +56,26 @@
 <!--==============================Content=================================-->
                  
             
-			<!--  Datos Deportista -->   
+			<!--  Datos Equipo -->   
 			<div class="container_12" >
-		        <h2>{{nombreDeportista}}</h2>
-		        <p><b>Deportista</b></p>   
+		        <h2>{{nombreEquipo}}</h2>
+		        <p><b>Equipo</b></p>   
 		         <ul class="container_12" >
-			              <li><p>Equipo: {{equipoDeportista}}</p></li> 
-			              <li><p><span class="fa fa-envelope fa-2x" ></span>  {{emailDeportista}}</p></li>
+			              <li><p>Deporte: {{deporte}}</p></li> 
+			              
 			            </ul> 
 			            <hr>  
-		      </div>           
+		      </div> 
+		      
+     
 	 
-	 <!--  Histórico de eventos -->
+	 <!--  Componentes del equipo -->
+	 
+	 
 	 <div class="content"><div class="ic"></div>
 				<div class="container_12">
 					<div class="grid22">
-						<h7><CENTER>HISTORICO DE EVENTOS</CENTER></h7>
+						<h7><CENTER>COMPONENTES DEL EQUIPO</CENTER></h7>
 					</div>
 
 			
@@ -79,42 +83,50 @@
 				  
 				  <tr>
 				    <th data-th="Driver details"><span>Nombre</span></th>
-				    <th>Tipo de Evento</th>
-				    <th>Ritmo cardiaco medio</th>
-				    <th>Distancia recorrida</th>
-				    <th>Tiempo</th>
-				    <th>Velocidad media</th>
+				    <th>Email</th>
+				    <th>Ultimo Puesto</th>
+				    <th>Ultima velocidad media</th>
 				    <th>Otros</th>
 				  </tr>
 				  
 				  <tr>
-				    <td>Maraton de San Sebastian</td>
-				    <td>Maraton</td>
-				    <td>75 lpm</td>
-				    <td>14,1 Km</td>
-				    <td>2,5 h</td>
-				    <td>6,2 Km/h</td>
-				    <td>Puesto 20</td>
+				    <td><p>{{componente1}} </p></td>
+				    <td>{{email1}}</td>
+				    <td>*</td>
+				    <td>*</td>
+				    <td>*</td>
 				  </tr>
 				  
 				  <tr>
-				    <td>San Silvestre</td>
-				    <td>Carrera Popular</td>
-				    <td>75 lpm</td>
-				    <td>14,1 Km</td>
-				    <td>2,5 h</td>
-				    <td>6,2 Km/h</td>
-				    <td>Puesto 20</td>
+				    <td><p>{{componente2}} </p></td>
+				    <td>{{email2}}</td>
+				    <td>*</td>
+				    <td>*</td>
+				    <td>*</td>
 				  </tr>
 				  
 				  <tr>
-				    <td>IronMan Segovia</td>
-				    <td>Iron Man</td>
-				    <td>75 lpm</td>
-				    <td>30,2 h</td>
-				    <td>2,5 h</td>
-				    <td>6,5 Km/h</td>
-				    <td>Puesto 30</td>
+				    <td><p>{{componente3}} </p></td>
+				    <td>{{email3}}</td>
+				    <td>*</td>
+				    <td>*</td>
+				    <td>*</td>
+				  </tr>
+				  
+				  <tr>
+				    <td><p>{{componente4}} </p></td>
+				    <td>{{email4}}</td>
+				    <td>*</td>
+				    <td>*</td>
+				    <td>*</td>
+				  </tr>
+				  
+				  <tr>
+				    <td><p>{{componente5}} </p></td>
+				    <td>{{email5}}</td>
+				    <td>*</td>
+				    <td>*</td>
+				    <td>*</td>
 				  </tr>
 				  
 				  
@@ -153,4 +165,3 @@
 		</footer>
 	</body>
 </html>
-
