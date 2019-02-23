@@ -12,7 +12,7 @@ import com.example.AES.Entrenador;
 import com.example.AES.Equipo;
 import com.example.AES.Evento;
 
-//import com.example.AES.
+import com.example.AES.*;
 
 import javax.annotation.PostConstruct;
 import javax.servlet.http.HttpServletRequest;

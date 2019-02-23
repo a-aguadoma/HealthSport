@@ -9,13 +9,4 @@ import org.springframework.stereotype.Controller;
 public class LoginController {
 
 	
-	@RequestMapping("/deportista")
-	public String deportista(Model model) {
-		return "deportista";
-	}
-	
-	@RequestMapping("/entrenador")
-	public String entrenador(Model model) {
-		return "entrenador";
-	}
 }

@@ -11,6 +11,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.example.AES.repositories.*;
 
@@ -30,6 +31,20 @@ public class DeportistaController {
 			//model.addAttribute("apellidoDeportista", " " + deportista.getApellido());			
 			model.addAttribute("equipoCliente", " " + deportista.getEquipo().getNombre());
 			model.addAttribute("emailCliente", " " + deportista.getEmail());
+			//model.addAttribute("Registrado como", " " + "Deportista");		
+			return "deportista";
+		
+	}
+	
+	@RequestMapping("/deportistaEjemplo")
+	public String Deportista (Model model) {
+		
+		
+			Deportista deportista = (Deportista) deportistaRepository.findByEmail("paco@urjc.es");
+			model.addAttribute("nombreDeportista", " " + deportista.getNombre());
+			//model.addAttribute("apellidoDeportista", " " + deportista.getApellido());			
+			model.addAttribute("equipoDeportista", " " + deportista.getEquipo().getNombre());
+			model.addAttribute("emailDeportista", " " + deportista.getEmail());
 			//model.addAttribute("Registrado como", " " + "Deportista");		
 			return "deportista";
 		
