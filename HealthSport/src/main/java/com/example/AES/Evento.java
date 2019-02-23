@@ -91,7 +91,7 @@ public class Evento {
 	@Override
 	public String toString() {
 		return "Evento [id=" + id + ", nombre=" + nombre + ", deporte=" + deporte + ", tipo=" + tipo + ", lugar="
-				+ lugar + ", participantes=" + participantes + "]";
+				+ lugar + ", participantes=" + participantes + "] ";
 	}
 	
 }

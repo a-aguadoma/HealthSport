@@ -20,7 +20,6 @@ public class EventoController {
 		eventoRepository.save(new Evento(nombreEvento,"Baloncesto", tipoEvento, lugar, null));
 		
 		return("index");
-
 	}
 		
 }
