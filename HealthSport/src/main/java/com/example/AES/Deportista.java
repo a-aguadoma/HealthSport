@@ -34,7 +34,12 @@ public class Deportista {
 		this.email=email;
 		this.pass=pass;
 		this.equipo=equipo;
-		this.estadisticas=estadisticas;
+		this.estadisticas=estadisticas;		
+		
+		/*List<Deportista> list = equipo.getDeportistas();
+		list.add(this);
+		
+		equipo.setDeportistas(list);*/
 	}
 
 	public long getId() {

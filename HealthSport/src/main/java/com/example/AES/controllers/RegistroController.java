@@ -80,9 +80,8 @@ public class RegistroController  implements CommandLineRunner {
 
 		entrenadorRepository.save(new Entrenador("Antonio", "pass", "antonio@urjc.es", equipoRepository.findByClave("clave")));
 
-		
 		deportistaRepository.save(new Deportista("Paco", "paco@urjc.es", "pass", equipoRepository.findByClave("clave"), null));
-		deportistaRepository.save(new Deportista("Chloe", "chloe@urjc.es", "pass", equipoRepository.findByNombre("invencibles"), null));
+		deportistaRepository.save(new Deportista("Chloe", "chloe@urjc.es", "pass", equipoRepository.findByClave("clave"), null));
 		 
 		
 		 }
