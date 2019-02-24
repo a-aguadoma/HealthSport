@@ -32,7 +32,7 @@ public class Equipo {
 	private Entrenador entrenador;
 	
 	@JsonIgnore
-	@ManyToMany(mappedBy = "participantes")
+	@ManyToMany(mappedBy = "equipo")
 	private List<Evento> eventos;
 	
 	

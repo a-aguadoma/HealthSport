@@ -1,14 +1,11 @@
 package com.example.AES;
 
-import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
-import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
@@ -25,20 +22,21 @@ public class Evento {
 	private String lugar;
 	
 	@JsonIgnore
-	@ManyToMany
-	private List<Equipo> participantes;
+	@ManyToOne
+	private Equipo equipo ;
 	
 	
 	
 	public Evento() {}
 	
-	public Evento(String nombre, String deporte, String tipo, String lugar, List<Equipo> participantes) {
+	public Evento(String nombre, String deporte, String tipo, String lugar, Equipo equipo) {
 		this.nombre = nombre;
 		this.deporte=deporte;
 		this.tipo = tipo;
 		this.lugar=lugar;
-		this.participantes=participantes;
+		this.equipo=equipo;
 	}
+
 
 	public long getId() {
 		return id;
@@ -72,12 +70,12 @@ public class Evento {
 		this.lugar = lugar;
 	}
 
-	public List<Equipo> getParticipantes() {
-		return participantes;
+	public Equipo getEquipo() {
+		return equipo;
 	}
 
-	public void setParticipantes(List<Equipo> participantes) {
-		this.participantes = participantes;
+	public void setEquipo(Equipo equipo) {
+		this.equipo = equipo;
 	}
 
 	public String getDeporte() {
@@ -91,7 +89,7 @@ public class Evento {
 	@Override
 	public String toString() {
 		return "Evento [id=" + id + ", nombre=" + nombre + ", deporte=" + deporte + ", tipo=" + tipo + ", lugar="
-				+ lugar + ", participantes=" + participantes + "] ";
+				+ lugar + ", equipo=" + equipo + "] ";
 	}
 	
 }
