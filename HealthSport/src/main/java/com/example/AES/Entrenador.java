@@ -27,6 +27,7 @@ public class Entrenador {
 		this.pass=pass;
 		this.email=email;
 		this.equipo=equipo;
+		
 	}
 	
 	public String getNombre() {
