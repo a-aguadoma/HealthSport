@@ -1,4 +1,4 @@
-HealthSport
+# HealthSport
 
 ## Fase 1:
 
@@ -29,6 +29,9 @@ Para cooordinarse, el equipo utilizará la herrramienta Trello: https://trello.c
 
 
 ## Fase 2:
+
+### DIAGRAMA UML
+![DiagramaUML2](https://github.com/a-aguadoma/HealthSport/blob/master/UML2.jpeg)
 
 ### Diagrama Entidad/Relación
 ![DiagramaER](https://github.com/a-aguadoma/HealthSport/blob/master/BaseDeDatos.jpeg)
