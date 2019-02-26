@@ -43,8 +43,10 @@
 							<nav class="horizontal-nav full-width horizontalNav-notprocessed">
 								<ul class="sf-menu">
 									<li class="current"><a href="/entrenador">Apuntarse a Evento</a></li>
+
 									<li><a href="/equipo?eq={{equipoEntrenador}}">Datos Equipo</a></li>
 											
+
 								</ul>
 							</nav>
 							<div class="clear"></div>
@@ -74,16 +76,22 @@
 					<div class="grid22">
 						<h7><CENTER>NUEVO EVENTO DE EQUIPO</CENTER></h7>
 						<form method="post" action="nuevoEvento">
+								<CENTER>
 								<h8>Formulario Registro</h8>
 								<div class="form-group">
+
 									<input type="text" placeholder="Nombre del evento" name=nombreEvento class="form-control">
 									<input type="text" placeholder="Deporte" name=deporteEvento class="form-control">
 								  	<input type="text" placeholder="Tipo de evento" name=tipoEvento class="form-control">
 								  	<input type="text" placeholder="Fecha" name=fecha class="form-control">
 								  	<input type="text" placeholder="Lugar" name=lugar class="form-control">
+
 								  	<input type="hidden" name="equipo" value="{{equipoEntrenador}}"/>
+								  	<div class="clear"></div>
+									<p></p>  
 								</div>
 								<button class ="zmdi zmdi-arrow-right"> Registrar Evento</button>
+								</CENTER>
 							</form>
 					</div>
 					<hr>  

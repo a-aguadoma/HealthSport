@@ -28,7 +28,7 @@ public class EntrenadorController {
 			model.addAttribute("emailEntrenador", entrenador.getEmail());		
 			
 			List<Evento> listaEventos = entrenador.getEquipo().getEventos();
-			System.out.println("en la lista hay " + listaEventos.size() + "Eventos");
+			//System.out.println("en la lista hay " + listaEventos.size() + "Eventos");
 			
 			for(int i = 1; i <= listaEventos.size(); i++) {
 				model.addAttribute("nombre" + i, listaEventos.get(i-1).getNombre());

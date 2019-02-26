@@ -21,59 +21,97 @@ public class Estadisticas {
 	private float distancia;
 	private float tiempo;
 	private float velocidad;
-	private String otros;
-	
-	
-	
-	
-	public Estadisticas() {}
-	
-	public Estadisticas(int lpm, float distancia, float tiempo, float velocidad, String otros) {
-		this.lpm=lpm;
-		this.distancia=distancia;
-		this.tiempo=tiempo;
-		this.otros=otros;
-		
-	}
 	
 	@ManyToOne
 	private Evento evento;
 	
+	@ManyToOne
+	private Deportista deportista;
 	
+	
+	public Estadisticas() {}
+	
+	public Estadisticas(int lpm, float distancia, float tiempo, float velocidad, Evento evento, Deportista deportista) {
+		this.lpm=lpm;
+		this.distancia=distancia;
+		this.tiempo=tiempo;
+		this.velocidad=velocidad;
+		this.evento=evento;
+		this.deportista=deportista;
+		
+	}
+	
+	public Estadisticas(Evento evento, Deportista deportista) {
+		this.lpm=(int)(Math.random()*(135-70)+70);
+		this.distancia=(float) (Math.round((float) (Math.random()*(11-2)+2)*100.0)/100.0);		
+		this.velocidad=(float) (Math.round((float) (Math.random()*(21-6)+6)*100.0)/100.0);
+		this.tiempo=(float) (Math.round((distancia/velocidad)*100.0)/100.0);
+		this.evento=evento;
+		this.deportista=deportista;
+		
+	}
+
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
+
 	public int getLpm() {
 		return lpm;
 	}
-	
+
 	public void setLpm(int lpm) {
-		this.lpm=lpm;
+		this.lpm = lpm;
 	}
-	
+
 	public float getDistancia() {
 		return distancia;
 	}
-	
+
 	public void setDistancia(float distancia) {
-		this.distancia=distancia;
+		this.distancia = distancia;
 	}
+
 	public float getTiempo() {
 		return tiempo;
 	}
-	
-	public void setTiempo(float tiempo) {
-		this.tiempo=tiempo;
-	}
-	
 
-	
-	public String getOtros() {
-		return otros;
+	public void setTiempo(float tiempo) {
+		this.tiempo = tiempo;
 	}
-	
-	public void setOtros(String otros) {
-		this.otros=otros;
+
+	public float getVelocidad() {
+		return velocidad;
 	}
-	
-	
+
+	public void setVelocidad(float velocidad) {
+		this.velocidad = velocidad;
+	}
+
+	public Evento getEvento() {
+		return evento;
+	}
+
+	public void setEvento(Evento evento) {
+		this.evento = evento;
+	}
+
+	public Deportista getDeportista() {
+		return deportista;
+	}
+
+	public void setDeportista(Deportista deportista) {
+		this.deportista = deportista;
+	}
+
+	@Override
+	public String toString() {
+		return "Estadisticas [id=" + id + ", lpm=" + lpm + ", distancia=" + distancia + ", tiempo=" + tiempo
+				+ ", velocidad=" + velocidad + ", evento=" + evento + ", deportista=" + deportista + "]";
+	}
 	
 	
 	
