@@ -49,15 +49,27 @@ Pagina principal desde la que se presenta minimamente la aplicación, el equipo 
 ### LOGIN
 Página de inicio de sesion, en la cual iniciaran sesion tanto los deportistas como los entrenadores.
 
-![Login](https://github.com/a-aguadoma/HealthSport/blob/master/login.jpeg)
+![Login](https://github.com/a-aguadoma/HealthSport/blob/master/login2.jpeg)
 
 ### REGISTRO
 Página de registro en la cual los usuarios, tanto deportisca como entrenador, obtendran sus credenciales y serán registrados en la Base de Datos.
 
-![registro](https://github.com/a-aguadoma/HealthSport/blob/master/registro.jpeg)
+![registro](https://github.com/a-aguadoma/HealthSport/blob/master/registro2.jpeg)
 
 ### DEPORTISTA
+Página del deportista, podrá visualizar una rutina, las estadisticas de su equipo. Puede ver las gráficas de su propio rendimiento.
 
-![deportista](https://github.com/a-aguadoma/HealthSport/blob/master/deportista.jpeg)
+![deportista](https://github.com/a-aguadoma/HealthSport/blob/master/deportista2.jpeg)
+
+### ENTRENADOR
+Página de entrenador, dispondrá de un grupo de deportistas, con los que podrá contactar, ajustando la rutina para que se adecue a cada deportista. Además puede ver todos los datos guardados y estadisticas por parte de los equipos.
+
+![entrenador](https://github.com/a-aguadoma/HealthSport/blob/master/entrenador2.jpeg)
+
+### QUIENES SOMOS
+Página donde se presenta al equipo de HealthSport.
+
+![quienessomos](https://github.com/a-aguadoma/HealthSport/blob/master/quienesomos2.jpeg)
+
 
 
