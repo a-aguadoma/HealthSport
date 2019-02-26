@@ -64,7 +64,7 @@ Página del deportista, podrá visualizar una rutina, las estadisticas de su equ
 ### ENTRENADOR
 Página de entrenador, dispondrá de un grupo de deportistas, con los que podrá contactar, ajustando la rutina para que se adecue a cada deportista. Además puede ver todos los datos guardados y estadisticas por parte de los equipos.
 
-![entrenador](https://github.com/a-aguadoma/HealthSport/blob/master/entrenador2.jpg)
+![entrenador](https://github.com/a-aguadoma/HealthSport/blob/master/entrenador2.JPG)
 
 ### QUIENES SOMOS
 Página donde se presenta al equipo de HealthSport.
