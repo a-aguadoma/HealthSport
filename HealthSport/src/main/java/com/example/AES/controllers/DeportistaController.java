@@ -44,11 +44,11 @@ public class DeportistaController {
 			Deportista deportista = (Deportista) deportistaRepository.findByEmail("paco@urjc.es");
 			model.addAttribute("nombreDeportista", deportista.getNombre());		
 			model.addAttribute("equipoDeportista", deportista.getEquipo().getNombre());
-			model.addAttribute("emailDeportista", deportista.getEmail());
-			//model.addAttribute("Registrado como", "Deportista");		
+			model.addAttribute("emailDeportista", deportista.getEmail());		
 			
+			
+			//Lista de eventos en los que ha participado el deportista
 			List<Evento> listaEventos = deportista.getEquipo().getEventos();
-			System.out.println("en la lista hay " + listaEventos.size() + "Eventos");
 			
 			for(int i = 1; i <= listaEventos.size(); i++) {
 				Estadisticas estadisticas = new Estadisticas(listaEventos.get(i-1), deportista);
@@ -79,7 +79,7 @@ public class DeportistaController {
 
 
 			}
-			System.out.println("sale for");
+			
 			return "deportista";
 		
 	}

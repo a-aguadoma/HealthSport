@@ -77,11 +77,12 @@ public class RegistroController  implements CommandLineRunner {
 	public void run(String... args) throws Exception {
 		
 		equipoRepository.save(new Equipo("invencibles", "baloncesto", "clave", null,  null, null));
+		equipoRepository.save(new Equipo("sinEquipo", null , null, null,  null, null));
 
 		entrenadorRepository.save(new Entrenador("Antonio", "pass", "antonio@urjc.es", equipoRepository.findByClave("clave")));
 
-		deportistaRepository.save(new Deportista("Paco", "paco@urjc.es", "pass", equipoRepository.findByClave("clave"), null));
-		deportistaRepository.save(new Deportista("Chloe", "chloe@urjc.es", "pass", equipoRepository.findByClave("clave"), null));
+		deportistaRepository.save(new Deportista("Paco", "paco@urjc.es", "pass", equipoRepository.findByNombre("sinEquipo"), null));
+		deportistaRepository.save(new Deportista("Chloe", "chloe@urjc.es", "pass", equipoRepository.findByNombre("sinEquipo"), null));
 		 
 		 }
 	

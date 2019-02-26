@@ -21,7 +21,7 @@ public class EventoController {
 	@PostMapping(value="/nuevoEvento")	
 	public String crearEvento(@RequestParam String nombreEvento,@RequestParam String deporteEvento,@RequestParam String tipoEvento, @RequestParam String fecha, @RequestParam String lugar, @RequestParam String equipo) {
 		
-		
+		//Añadir un nuevo evento asociado a un equipo
 		Equipo eq = (Equipo) equipoRepository.findByNombre(equipo);
 		
 		eventoRepository.save(new Evento(nombreEvento,deporteEvento, tipoEvento, fecha, lugar, eq));
