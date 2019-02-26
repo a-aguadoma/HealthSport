@@ -33,10 +33,10 @@ Para cooordinarse, el equipo utilizará la herrramienta Trello: https://trello.c
 ### DIAGRAMA UML
 ![DiagramaUML2](https://github.com/a-aguadoma/HealthSport/blob/master/UML2.1.jpeg)
 
-### Diagrama Entidad/Relación
+### DIAGRAMA ENTIDAD/RELACION
 ![DiagramaER](https://github.com/a-aguadoma/HealthSport/blob/master/BaseDeDatos.jpeg)
 
-### Diagrama de Navegación
+### DIAGRAMA DE NAVEGACION
 ![DiagramaNavegacion2](https://github.com/a-aguadoma/HealthSport/blob/master/navegacion2.jpeg)
 
 ### PAGINAS PRINCIPALES
