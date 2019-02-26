@@ -59,12 +59,12 @@ Página de registro en la cual los usuarios, tanto deportisca como entrenador, o
 ### DEPORTISTA
 Página del deportista, podrá visualizar una rutina, las estadisticas de su equipo. Puede ver las gráficas de su propio rendimiento.
 
-![deportista](https://github.com/a-aguadoma/HealthSport/blob/master/deportista2.jpeg)
+![deportista](https://github.com/a-aguadoma/HealthSport/blob/master/deportista2.jpg)
 
 ### ENTRENADOR
 Página de entrenador, dispondrá de un grupo de deportistas, con los que podrá contactar, ajustando la rutina para que se adecue a cada deportista. Además puede ver todos los datos guardados y estadisticas por parte de los equipos.
 
-![entrenador](https://github.com/a-aguadoma/HealthSport/blob/master/entrenador2.jpeg)
+![entrenador](https://github.com/a-aguadoma/HealthSport/blob/master/entrenador2.jpg)
 
 ### QUIENES SOMOS
 Página donde se presenta al equipo de HealthSport.
