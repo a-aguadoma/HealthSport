@@ -49,7 +49,7 @@ Pagina principal desde la que se presenta minimamente la aplicación, el equipo 
 ### LOGIN
 Página de inicio de sesion, en la cual iniciaran sesion tanto los deportistas como los entrenadores.
 
-![Login](https://github.com/a-aguadoma/HealthSport/blob/master/login2.jpeg)
+![Login](https://github.com/a-aguadoma/HealthSport/blob/master/login2.JPG)
 
 ### REGISTRO
 Página de registro en la cual los usuarios, tanto deportisca como entrenador, obtendran sus credenciales y serán registrados en la Base de Datos.
