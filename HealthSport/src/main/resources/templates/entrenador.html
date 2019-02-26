@@ -43,7 +43,7 @@
 							<nav class="horizontal-nav full-width horizontalNav-notprocessed">
 								<ul class="sf-menu">
 									<li class="current"><a href="/entrenador">Apuntarse a Evento</a></li>
-									<li><a href="/equipo">Datos Equipo</a></li>
+									<li><a href="/equipo?eq={{equipoEntrenador}}">Datos Equipo</a></li>
 											
 								</ul>
 							</nav>
@@ -79,6 +79,7 @@
 									<input type="text" placeholder="Nombre del evento" name=nombreEvento class="form-control">
 									<input type="text" placeholder="Deporte" name=deporteEvento class="form-control">
 								  	<input type="text" placeholder="Tipo de evento" name=tipoEvento class="form-control">
+								  	<input type="text" placeholder="Fecha" name=fecha class="form-control">
 								  	<input type="text" placeholder="Lugar" name=lugar class="form-control">
 								  	<input type="hidden" name="equipo" value="{{equipoEntrenador}}"/>
 								</div>
@@ -105,6 +106,7 @@
 				    <th data-th="Driver details"><span>Nombre</span></th>
 				    <th>Deporte</th>
 				    <th>Tipo de competición</th>
+				    <th>Fecha</th>
 				    <th>Lugar</th>
 				    <th>Otros</th>
 				  </tr>
@@ -113,6 +115,7 @@
 				    <td><p>{{nombre1}} </p></td>
 				    <td>{{deporte1}}</td>
 				    <td>{{tipo1}}</td>
+				    <td>{{fecha1}}</td>
 				    <td>{{lugar1}}</td>
 				    <td>*</td>
 				  </tr>
@@ -121,6 +124,7 @@
 				    <td><p>{{nombre2}} </p></td>
 				    <td>{{deporte2}}</td>
 				    <td>{{tipo2}}</td>
+				    <td>{{fecha2}}</td>
 				    <td>{{lugar2}}</td>
 				    <td>*</td>
 				  </tr>
@@ -129,6 +133,7 @@
 				    <td><p>{{nombre3}} </p></td>
 				    <td>{{deporte3}}</td>
 				    <td>{{tipo3}}</td>
+				    <td>{{fecha3}}</td>
 				    <td>{{lugar3}}</td>
 				    <td>*</td>
 				  </tr>
@@ -137,6 +142,7 @@
 				    <td><p>{{nombre4}} </p></td>
 				    <td>{{deporte4}}</td>
 				    <td>{{tipo4}}</td>
+				    <td>{{fecha4}}</td>
 				    <td>{{lugar4}}</td>
 				    <td>*</td>
 				  </tr>
@@ -145,6 +151,7 @@
 				    <td><p>{{nombre5}} </p></td>
 				    <td>{{deporte5}}</td>
 				    <td>{{tipo5}}</td>
+				    <td>{{fecha5}}</td>
 				    <td>{{lugar5}}</td>
 				    <td>*</td>
 				  </tr>

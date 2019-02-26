@@ -6,7 +6,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.example.AES.Evento;
-import com.example.AES.Entrenador;
 import com.example.AES.Equipo;
 import com.example.AES.repositories.*;
 
@@ -20,12 +19,12 @@ public class EventoController {
 	private EquipoRepository equipoRepository;
 	
 	@PostMapping(value="/nuevoEvento")	
-	public String crearEvento(@RequestParam String nombreEvento,@RequestParam String deporteEvento,@RequestParam String tipoEvento, @RequestParam String lugar, @RequestParam String equipo) {
+	public String crearEvento(@RequestParam String nombreEvento,@RequestParam String deporteEvento,@RequestParam String tipoEvento, @RequestParam String fecha, @RequestParam String lugar, @RequestParam String equipo) {
 		
 		
 		Equipo eq = (Equipo) equipoRepository.findByNombre(equipo);
 		
-		eventoRepository.save(new Evento(nombreEvento,deporteEvento, tipoEvento, lugar, eq));
+		eventoRepository.save(new Evento(nombreEvento,deporteEvento, tipoEvento, fecha, lugar, eq));
 		
 		return("entrenadorEjemplo");
 	}

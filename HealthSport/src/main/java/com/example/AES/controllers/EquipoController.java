@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.example.AES.Equipo;
 import com.example.AES.Deportista;
@@ -17,11 +18,11 @@ public class EquipoController {
 	@Autowired
 	EquipoRepository equipoRepository;
 	
-	@RequestMapping("/equipoEjemplo")
-	public String Equipo (Model model) {
+	@RequestMapping("/equipo")
+	public String Equipo (Model model, @RequestParam String eq) {
 		
 		
-			Equipo equipo = (Equipo) equipoRepository.findByNombre("invencibles");
+			Equipo equipo = (Equipo) equipoRepository.findByNombre(eq);
 			model.addAttribute("nombreEquipo", " " + equipo.getNombre());		
 			model.addAttribute("deporte", " " + equipo.getDeporte());
 			
@@ -40,5 +41,6 @@ public class EquipoController {
 			return "equipo";
 		
 	}
+
 
 }

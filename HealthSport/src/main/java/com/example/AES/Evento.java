@@ -19,6 +19,7 @@ public class Evento {
 	private String nombre;
 	private String deporte;
 	private String tipo;
+	private String fecha;
 	private String lugar;
 	
 	@JsonIgnore
@@ -29,10 +30,11 @@ public class Evento {
 	
 	public Evento() {}
 	
-	public Evento(String nombre, String deporte, String tipo, String lugar, Equipo equipo) {
+	public Evento(String nombre, String deporte, String tipo, String fecha, String lugar, Equipo equipo) {
 		this.nombre = nombre;
 		this.deporte=deporte;
 		this.tipo = tipo;
+		this.fecha=fecha;
 		this.lugar=lugar;
 		this.equipo=equipo;
 	}
@@ -61,6 +63,13 @@ public class Evento {
 	public void setTipo(String tipo) {
 		this.tipo = tipo;
 	}
+	
+	public String getFecha(){
+		return fecha;
+	}
+	public void setFecha(String fecha) {
+		this.fecha=fecha;
+	}
 
 	public String getLugar() {
 		return lugar;
@@ -88,7 +97,7 @@ public class Evento {
 
 	@Override
 	public String toString() {
-		return "Evento [id=" + id + ", nombre=" + nombre + ", deporte=" + deporte + ", tipo=" + tipo + ", lugar="
+		return "Evento [id=" + id + ", nombre=" + nombre + ", deporte=" + deporte + ", tipo=" + tipo + ", fecha=" + fecha + ", lugar="
 				+ lugar + ", equipo=" + equipo + "] ";
 	}
 	
