@@ -37,7 +37,7 @@ Para cooordinarse, el equipo utilizará la herrramienta Trello: https://trello.c
 ![DiagramaER](https://github.com/a-aguadoma/HealthSport/blob/master/BaseDeDatos.jpeg)
 
 ### Diagrama de Navegación
-![DiagramaNavegacion](https://github.com/a-aguadoma/HealthSport/blob/master/Vistas.jpeg)
+![DiagramaNavegacion2](https://github.com/a-aguadoma/HealthSport/blob/master/navegacion2.jpeg)
 
 ### PAGINAS PRINCIPALES
 
