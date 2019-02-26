@@ -69,7 +69,7 @@ Página de entrenador, dispondrá de un grupo de deportistas, con los que podrá
 ### QUIENES SOMOS
 Página donde se presenta al equipo de HealthSport.
 
-![quienessomos](https://github.com/a-aguadoma/HealthSport/blob/master/qquienessomos2.JPG)
+![quienessomos2](https://github.com/a-aguadoma/HealthSport/blob/master/quienessomos2.JPG)
 
 
 
