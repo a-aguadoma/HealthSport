@@ -54,12 +54,12 @@ Página de inicio de sesion, en la cual iniciaran sesion tanto los deportistas c
 ### REGISTRO
 Página de registro en la cual los usuarios, tanto deportisca como entrenador, obtendran sus credenciales y serán registrados en la Base de Datos.
 
-![registro](https://github.com/a-aguadoma/HealthSport/blob/master/registro2.jpeg)
+![registro](https://github.com/a-aguadoma/HealthSport/blob/master/registro2.JPG)
 
 ### DEPORTISTA
 Página del deportista, podrá visualizar una rutina, las estadisticas de su equipo. Puede ver las gráficas de su propio rendimiento.
 
-![deportista](https://github.com/a-aguadoma/HealthSport/blob/master/deportista2.jpg)
+![deportista](https://github.com/a-aguadoma/HealthSport/blob/master/deportista2.JPG)
 
 ### ENTRENADOR
 Página de entrenador, dispondrá de un grupo de deportistas, con los que podrá contactar, ajustando la rutina para que se adecue a cada deportista. Además puede ver todos los datos guardados y estadisticas por parte de los equipos.
