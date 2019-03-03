@@ -25,51 +25,51 @@ Para cooordinarse, el equipo utilizará la herrramienta Trello: https://trello.c
 -Entidades. Las entidades que forman el programa son: Entrenador, Deportista, Equipo, Constantes Vitales, Estadisticas Grupales y Competiciones, distribuidas de la siguiente forma:
 
 ### Diagrama UML1
-![DiagramaUML1](https://github.com/a-aguadoma/HealthSport/blob/master/diagrama_uml.jpeg)
+![DiagramaUML1](https://github.com/a-aguadoma/HealthSport/blob/master/Imagenes/diagrama_uml.jpg)
 
 
 ## Fase 2:
 
 ### DIAGRAMA UML
-![DiagramaUML2](https://github.com/a-aguadoma/HealthSport/blob/master/UML2.1.jpeg)
+![DiagramaUML2](https://github.com/a-aguadoma/HealthSport/blob/master/Imagenes/UML2.1.jpg)
 
 ### DIAGRAMA ENTIDAD/RELACION
-![DiagramaER](https://github.com/a-aguadoma/HealthSport/blob/master/er2.JPG)
+![DiagramaER](https://github.com/a-aguadoma/HealthSport/blob/master/Imagenes/er2.jpg)
 
 ### DIAGRAMA DE NAVEGACION
-![DiagramaNavegacion2](https://github.com/a-aguadoma/HealthSport/blob/master/navegacion2.jpeg)
+![DiagramaNavegacion2](https://github.com/a-aguadoma/HealthSport/blob/master/Imagenes/navegacion2.jpg)
 
 ### PAGINAS PRINCIPALES
 
 ### INDEX
 Pagina principal desde la que se presenta minimamente la aplicación, el equipo y en la que encontramos los enlaces a las paginas principales.
 
-![Index](https://github.com/a-aguadoma/HealthSport/blob/master/index.jpeg)
+![Index](https://github.com/a-aguadoma/HealthSport/blob/master/Imagenes/index.jpg)
 
 ### LOGIN
 Página de inicio de sesion, en la cual iniciaran sesion tanto los deportistas como los entrenadores.
 
-![Login](https://github.com/a-aguadoma/HealthSport/blob/master/login2.JPG)
+![Login](https://github.com/a-aguadoma/HealthSport/blob/master/Imagenes/login2.jpg)
 
 ### REGISTRO
 Página de registro en la cual los usuarios, tanto deportisca como entrenador, obtendran sus credenciales y serán registrados en la Base de Datos.
 
-![registro](https://github.com/a-aguadoma/HealthSport/blob/master/registro2.JPG)
+![registro](https://github.com/a-aguadoma/HealthSport/blob/master/Imagenes/registro2.jpg)
 
 ### DEPORTISTA
 Página del deportista, podrá visualizar una rutina, las estadisticas de su equipo. Puede ver las gráficas de su propio rendimiento.
 
-![deportista](https://github.com/a-aguadoma/HealthSport/blob/master/deportista2.JPG)
+![deportista](https://github.com/a-aguadoma/HealthSport/blob/master/Imagenes/deportista2.jpg)
 
 ### ENTRENADOR
 Página de entrenador, dispondrá de un grupo de deportistas, con los que podrá contactar, ajustando la rutina para que se adecue a cada deportista. Además puede ver todos los datos guardados y estadisticas por parte de los equipos.
 
-![entrenador](https://github.com/a-aguadoma/HealthSport/blob/master/entrenador2.JPG)
+![entrenador](https://github.com/a-aguadoma/HealthSport/blob/master/Imagenes/entrenador2.jpg)
 
 ### QUIENES SOMOS
 Página donde se presenta al equipo de HealthSport.
 
-![quienessomos2](https://github.com/a-aguadoma/HealthSport/blob/master/quienessomos2.JPG)
+![quienessomos2](https://github.com/a-aguadoma/HealthSport/blob/master/Imagenes/quienessomos2.jpg)
 
 
 
