@@ -40,6 +40,12 @@ public class Deportista {
 		
 		equipo.setDeportistas(list);*/
 	}
+	
+	public Deportista(String email, String pass) {
+		
+		this.email=email;
+		this.pass=pass;
+	}
 
 	public long getId() {
 		return id;

@@ -20,6 +20,8 @@ public interface DeportistaRepository extends JpaRepository<Deportista, Long> {
 	@Cacheable
 	Deportista findByEmail(String email);
 	
+	Deportista findByEmailAndPass(String email,String pass);
+	
 	
 	List<Deportista> findByNombre(String nombre);
 	

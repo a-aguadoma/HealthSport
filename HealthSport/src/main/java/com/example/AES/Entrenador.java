@@ -30,6 +30,12 @@ public class Entrenador {
 		
 	}
 	
+	public Entrenador(String email, String pass) {
+		this.email=email;
+		this.pass=pass;
+	}
+
+	
 	public String getNombre() {
 		return nombre;
 	}
