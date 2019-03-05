@@ -27,6 +27,7 @@ import javax.annotation.PostConstruct;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -49,12 +50,12 @@ public class RegistroController  implements CommandLineRunner {
 	private EntrenadorRepository entrenadorRepository;
 	
 
-	/*@PostMapping(value="/nuevoDeportista")	
-	public String registroDeportista(@RequestParam String nombre,@RequestParam String email, @RequestParam String pass, @RequestParam String equipo){   
+	@PostMapping(value="/nuevoDeportista")	
+	public String registroDeportista(@RequestParam String nombre,@RequestParam String email, @RequestParam String pass){   
 		
 		
-			Deportista nuevoDeportista = new Deportista (nombre, email, pass, equipoRep.findByNombre(equipo), null);
-			deportistaRepository.save(nuevoDeportista);*/
+			Deportista nuevoDeportista = new Deportista (nombre, email, pass, equipoRepository.findByNombre("sinEquipo"), null);
+			deportistaRepository.save(nuevoDeportista);
 			
 		/*
 		 * String url= "http://192.168.33.17/correo/" + nombre + "/" + email;
@@ -62,17 +63,18 @@ public class RegistroController  implements CommandLineRunner {
 		 * System.out.println("Datos enviados!");
 		 */
 			
-		/*	return("login");				
+			return("deportista?em="+ email);				
 	}
 	
 	@PostMapping(value="/nuevoEntrenador")
-	public String registroEntrenador(@RequestParam String nombre,@RequestParam String pass, @RequestParam String email, @RequestParam String equipo) {
+	public String registroEntrenador(@RequestParam String nombre,@RequestParam String email, @RequestParam String pass, @RequestParam String nombreEquipo, @RequestParam String deporte) {
 		
-		Entrenador nuevoEntrenador = new Entrenador(nombre, pass, email, equipoRep.findByNombre(equipo));
+		Entrenador nuevoEntrenador = new Entrenador(nombre, pass, email, null);
+		Equipo equipo = new Equipo(nombreEquipo, deporte, null, null, nuevoEntrenador, null);
 		
 		
 		return("login");
-	}*/
+	}
 	
 	public void run(String... args) throws Exception {
 		
@@ -85,6 +87,15 @@ public class RegistroController  implements CommandLineRunner {
 		deportistaRepository.save(new Deportista("Chloe", "chloe@urjc.es", "pass", equipoRepository.findByNombre("sinEquipo"), null));
 		 
 		 }
+	
+	@RequestMapping("/registroDeportista")
+	public String registroDeportista(Model model) {
+		return "registroDeportista";
+	}
+	@RequestMapping("/registroEntrenador")
+	public String registroEntrenador(Model model) {
+		return "registroEntrenador";
+	}
 	
 	
 }

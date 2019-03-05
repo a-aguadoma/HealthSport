@@ -105,8 +105,8 @@ public class EquipoController {
 		
 	}
 	
-	@RequestMapping("/AñadirDeportista")
-	public String AñadirDeportista (Model model, @RequestParam String equ, @RequestParam String dep) {
+	@RequestMapping("/AÃ±adirDeportista")
+	public String AÃ±adirDeportista (Model model, @RequestParam String equ, @RequestParam String dep) {
 		
 		
 			Equipo equipo = (Equipo) equipoRepository.findByNombre(equ);

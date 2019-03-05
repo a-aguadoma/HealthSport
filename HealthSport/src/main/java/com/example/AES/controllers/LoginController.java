@@ -17,7 +17,7 @@ import org.springframework.stereotype.Controller;
 @Controller
 public class LoginController {
 	
-	//aÑADIR FINDBYEMAILANDPASS EN LOS DOS REPOSITORIOS Y LOS CONTRASEÑAS
+	//aï¿½ADIR FINDBYEMAILANDPASS EN LOS DOS REPOSITORIOS Y LOS CONTRASEï¿½AS
 	
 	@RequestMapping("/loginerror")
 	public String deportista(Model model) {
@@ -32,30 +32,30 @@ public class LoginController {
 	
 
 	@PostMapping(value="/login")
-	public String login (@RequestParam String correo, @RequestParam String contraseña) {
+	public String login (@RequestParam String correo, @RequestParam String contraseÃ±a) {
 	
-		Deportista deportista = new Deportista (correo,contraseña);
-		Entrenador entrenador = new Entrenador (correo,contraseña);
+		Deportista deportista = new Deportista (correo,contraseÃ±a);
+		Entrenador entrenador = new Entrenador (correo,contraseÃ±a);
 		
 
 		while ((deportista.getEmail()!="")&&(deportista.getPass()!="")
 				&&(entrenador.getEmail()!="")&&(entrenador.getPass()!="")){
 			
 			
-			if  (entrenadorRepositorio.findByEmailAndPass(correo, contraseña)!=null) {
+			if  (entrenadorRepositorio.findByEmailAndPass(correo, contraseÃ±a)!=null) {
 				
 				return "entrenadorEjemplo";
 				
 			}
 			
-			if  (deportistaRepositorio.findByEmailAndPass(correo, contraseña)!=null) {
+			if  (deportistaRepositorio.findByEmailAndPass(correo, contraseÃ±a)!=null) {
 				
 				return "deportistaEjemplo";
 				
 			} 	
 			
-			if ((deportistaRepositorio.findByEmailAndPass(correo, contraseña)==null) 
-					||  (deportistaRepositorio.findByEmailAndPass(correo, contraseña)!=null)) {
+			if ((deportistaRepositorio.findByEmailAndPass(correo, contraseÃ±a)==null) 
+					||  (deportistaRepositorio.findByEmailAndPass(correo, contraseÃ±a)!=null)) {
 					
 					return "loginerror";
 				}
