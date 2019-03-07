@@ -32,30 +32,25 @@ public class LoginController {
 	
 
 	@PostMapping(value="/login")
-	public String login (@RequestParam String correo, @RequestParam String contraseña) {
+	public String login (Model model,@RequestParam String email, @RequestParam String pass) {
 	
-		Deportista deportista = new Deportista (correo,contraseña);
-		Entrenador entrenador = new Entrenador (correo,contraseña);
-		
-
-		while ((deportista.getEmail()!="")&&(deportista.getPass()!="")
-				&&(entrenador.getEmail()!="")&&(entrenador.getPass()!="")){
+		while ((email!="")&&(pass!="")){
 			
 			
-			if  (entrenadorRepositorio.findByEmailAndPass(correo, contraseña)!=null) {
+			if  (entrenadorRepositorio.findByEmailAndPass(email,pass)!=null) {
 				
 				return "entrenadorEjemplo";
 				
 			}
 			
-			if  (deportistaRepositorio.findByEmailAndPass(correo, contraseña)!=null) {
+			if  (deportistaRepositorio.findByEmailAndPass(email,pass)!=null) {
 				
-				return "deportistaEjemplo";
+				return "deportista?em="+email;
 				
 			} 	
 			
-			if ((deportistaRepositorio.findByEmailAndPass(correo, contraseña)==null) 
-					||  (deportistaRepositorio.findByEmailAndPass(correo, contraseña)!=null)) {
+			if ((deportistaRepositorio.findByEmailAndPass(email, pass)==null) 
+					||  (deportistaRepositorio.findByEmailAndPass(email, pass)!=null)) {
 					
 					return "loginerror";
 				}
