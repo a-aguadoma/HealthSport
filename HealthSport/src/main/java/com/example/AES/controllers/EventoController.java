@@ -26,7 +26,7 @@ public class EventoController {
 		
 		eventoRepository.save(new Evento(nombreEvento,deporteEvento, tipoEvento, fecha, lugar, eq));
 		
-		return("entrenadorEjemplo");
+		return("entrenador");
 	}
 		
 }

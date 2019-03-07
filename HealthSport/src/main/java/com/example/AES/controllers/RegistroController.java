@@ -69,11 +69,14 @@ public class RegistroController  implements CommandLineRunner {
 	@PostMapping(value="/nuevoEntrenador")
 	public String registroEntrenador(@RequestParam String nombre,@RequestParam String email, @RequestParam String pass, @RequestParam String nombreEquipo, @RequestParam String deporte) {
 		
-		Entrenador nuevoEntrenador = new Entrenador(nombre, pass, email, null);
-		Equipo equipo = new Equipo(nombreEquipo, deporte, null, null, nuevoEntrenador, null);
+		Equipo equipo = new Equipo(nombreEquipo, deporte, null, null, null, null);
+		equipoRepository.save(equipo);
 		
+		Entrenador nuevoEntrenador = new Entrenador(nombre, pass, email, equipoRepository.findByNombre(nombreEquipo));
 		
-		return("login");
+		entrenadorRepository.save(nuevoEntrenador);		
+		
+		return("entrenador?em="+ email);
 	}
 	
 	public void run(String... args) throws Exception {

@@ -40,11 +40,6 @@ public class HealthSportApplication {
 	}
 	
 	
-	@RequestMapping("/entrenador")
-	public String entrenador(Model model) {
-		return "entrenador";
-	}
-	
 
 
 }
