@@ -14,10 +14,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.example.AES.repositories.*;
+import com.example.AES.models.*;
 
-import com.example.AES.Deportista;
-import com.example.AES.Estadisticas;
-import com.example.AES.Evento;
 
 @Controller
 public class DeportistaController {

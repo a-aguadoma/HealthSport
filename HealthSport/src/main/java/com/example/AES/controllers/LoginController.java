@@ -5,10 +5,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.example.AES.Deportista;
-import com.example.AES.Entrenador;
-import com.example.AES.repositories.DeportistaRepository;
-import com.example.AES.repositories.EntrenadorRepository;
+import com.example.AES.models.*;
+import com.example.AES.repositories.*;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

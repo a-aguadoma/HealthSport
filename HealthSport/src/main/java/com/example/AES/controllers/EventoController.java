@@ -5,8 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.example.AES.Evento;
-import com.example.AES.Equipo;
+import com.example.AES.models.*;
 import com.example.AES.repositories.*;
 
 @Controller

@@ -8,8 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.example.AES.Entrenador;
-import com.example.AES.Evento;
+import com.example.AES.models.*;
 import com.example.AES.repositories.*;
 
 @Controller

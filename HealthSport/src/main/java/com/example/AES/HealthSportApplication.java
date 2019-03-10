@@ -22,10 +22,6 @@ public class HealthSportApplication {
 		return "index";
 	}
 
-	@RequestMapping("/calendario")
-	public String calendario(Model model) {
-		return "calendario";
-	}
 	@RequestMapping("/quienessomos")
 	public String quienessomos(Model model) {
 		return "quienessomos";
@@ -38,6 +34,11 @@ public class HealthSportApplication {
 	public String registroGeneral(Model model) {
 		return "registroGeneral";
 	}
+	
+	/*
+	 * @RequestMapping("/calendario") public String calendario(Model model) { return
+	 * "calendario"; }
+	 */
 	
 	
 

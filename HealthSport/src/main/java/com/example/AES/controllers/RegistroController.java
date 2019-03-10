@@ -7,10 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 
 import com.example.AES.repositories.*;
 
-import com.example.AES.Deportista;
-import com.example.AES.Entrenador;
-import com.example.AES.Equipo;
-import com.example.AES.Evento;
+import com.example.AES.models.*;
 
 import com.example.AES.*;
 
