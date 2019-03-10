@@ -100,12 +100,11 @@ public class EquipoController {
 				model.addAttribute("SEemail" + i, "-");
 			}
 			
-			
 			return "equipoEntrenador";
 		
 	}
 	
-	@RequestMapping("/AñadirDeportista")
+	@RequestMapping("/añadirDeportista")
 	public String AñadirDeportista (Model model, @RequestParam String equ, @RequestParam String dep) {
 		
 		
@@ -116,8 +115,7 @@ public class EquipoController {
 			
 			deportistaRepository.save(deportista);
 			
-			
-			
+	
 			return ("equipoEntrenador?eq="+ equ);
 		
 	}

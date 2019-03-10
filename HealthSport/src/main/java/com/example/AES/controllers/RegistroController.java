@@ -53,28 +53,36 @@ public class RegistroController  implements CommandLineRunner {
 	@PostMapping(value="/nuevoDeportista")	
 	public String registroDeportista(@RequestParam String nombre,@RequestParam String email, @RequestParam String pass){   
 		
-		
-			Deportista nuevoDeportista = new Deportista (nombre, email, pass, equipoRepository.findByNombre("sinEquipo"), null);
-			deportistaRepository.save(nuevoDeportista);
+		//Registro del deportista
+		Deportista nuevoDeportista = new Deportista (nombre, email, pass, equipoRepository.findByNombre("sinEquipo"), null);
+		deportistaRepository.save(nuevoDeportista);
 			
-		/*
-		 * String url= "http://192.168.33.17/correo/" + nombre + "/" + email;
-		 * RestTemplate rest = new RestTemplate(); rest.getForObject(url, String.class);
-		 * System.out.println("Datos enviados!");
-		 */
+		//Envio de correo mediante servicio interno
+		 String url= "http://localhost:8080/correo/" + nombre + "/" + email + "/" + "deportista";
+		 RestTemplate rest = new RestTemplate(); 
+		 rest.getForObject(url, String.class);
+		 System.out.println("Datos enviados! " + nombre + " " + email);
+		 
 			
-			return("deportista?em="+ email);				
+		return("deportista?em="+ email);				
 	}
 	
 	@PostMapping(value="/nuevoEntrenador")
 	public String registroEntrenador(@RequestParam String nombre,@RequestParam String email, @RequestParam String pass, @RequestParam String nombreEquipo, @RequestParam String deporte) {
 		
+		//Registro del equipo
 		Equipo equipo = new Equipo(nombreEquipo, deporte, null, null, null, null);
 		equipoRepository.save(equipo);
 		
+		//Registro del entrenador
 		Entrenador nuevoEntrenador = new Entrenador(nombre, pass, email, equipoRepository.findByNombre(nombreEquipo));
+		entrenadorRepository.save(nuevoEntrenador);	
 		
-		entrenadorRepository.save(nuevoEntrenador);		
+		//Envio de correo mediante servicio interno
+		 String url= "http://localhost:8080/correo/" + nombre + "/" + email + "/" + "entrenador";
+		 RestTemplate rest = new RestTemplate(); 
+		 rest.getForObject(url, String.class);
+		 System.out.println("Datos enviados! " + nombre + " " + email);
 		
 		return("entrenador?em="+ email);
 	}
