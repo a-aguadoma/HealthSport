@@ -37,7 +37,7 @@ public class LoginController {
 			
 			if  (entrenadorRepositorio.findByEmailAndPass(email,pass)!=null) {
 				
-				return "entrenadorEjemplo";
+				return("entrenador?em="+ email);
 				
 			}
 			
