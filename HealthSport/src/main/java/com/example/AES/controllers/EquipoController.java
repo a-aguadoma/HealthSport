@@ -18,7 +18,7 @@ public class EquipoController {
 	EquipoRepository equipoRepository;
 	
 	@Autowired
-	DeportistaRepository deportistaRepository;
+	UsuarioRepository usuarioRepository;
 	
 	@RequestMapping("/equipoDeportista")
 	public String Equipo (Model model, @RequestParam String eq) {
@@ -108,11 +108,11 @@ public class EquipoController {
 		
 		
 			Equipo equipo = (Equipo) equipoRepository.findByNombre(equ);
-			Deportista deportista = (Deportista) deportistaRepository.getByNombre(dep);
+			Deportista deportista = (Deportista) usuarioRepository.findByNombre(dep);
 			
 			deportista.setEquipo(equipo);
 			
-			deportistaRepository.save(deportista);
+			usuarioRepository.save(deportista);
 			
 	
 			return ("equipoEntrenador?eq="+ equ);

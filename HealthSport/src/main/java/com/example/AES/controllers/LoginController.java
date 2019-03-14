@@ -23,10 +23,7 @@ public class LoginController {
 	}
 	
 	@Autowired
-	DeportistaRepository deportistaRepositorio;
-	
-	@Autowired
-	EntrenadorRepository entrenadorRepositorio;
+	UsuarioRepository usuarioRepositorio;
 	
 
 	@PostMapping(value="/login")
@@ -35,20 +32,20 @@ public class LoginController {
 		while ((email!="")&&(pass!="")){
 			
 			
-			if  (entrenadorRepositorio.findByEmailAndPass(email,pass)!=null) {
+			if  (usuarioRepositorio.findByEmailAndPasswordHash(email,pass)!=null) {
 				
 				return("entrenador?em="+ email);
 				
 			}
 			
-			if  (deportistaRepositorio.findByEmailAndPass(email,pass)!=null) {
+			if  (usuarioRepositorio.findByEmailAndPasswordHash(email,pass)!=null) {
 				
 				return "deportista?em="+email;
 				
 			} 	
 			
-			if ((deportistaRepositorio.findByEmailAndPass(email, pass)==null) 
-					||  (deportistaRepositorio.findByEmailAndPass(email, pass)!=null)) {
+			if ((usuarioRepositorio.findByEmailAndPasswordHash(email, pass)==null) 
+					||  (usuarioRepositorio.findByEmailAndPasswordHash(email, pass)!=null)) {
 					
 					return "loginerror";
 				}

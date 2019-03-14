@@ -15,13 +15,13 @@ import com.example.AES.repositories.*;
 public class EntrenadorController {
 	
 	@Autowired
-	EntrenadorRepository entrenadorRepository;
+	UsuarioRepository usuarioRepository;
 	
 	@RequestMapping("/entrenador")
 	public String Entrenador (Model model, @RequestParam String em) {
 		
 		
-			Entrenador entrenador = (Entrenador) entrenadorRepository.findByEmail(em);
+			Entrenador entrenador = (Entrenador) usuarioRepository.findByEmail(em);
 			model.addAttribute("nombreEntrenador", entrenador.getNombre());		
 			model.addAttribute("equipoEntrenador", entrenador.getEquipo().getNombre());
 			model.addAttribute("emailEntrenador", entrenador.getEmail());		

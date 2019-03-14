@@ -8,12 +8,13 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 
 
+
 @Configuration
 public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
-	@Autowired
-	public EntrenadorRepositoryAuthProvider entrenadorauthenticationProvider;
 	
-	public DeportistaRepositoryAuthProvider deportistaauthenticationProvider;
+	@Autowired
+	public UsuarioRepositoryAuthProvider authenticationProvider;
+	
 	@Override
 	 protected void configure(HttpSecurity http) throws Exception {
 
@@ -54,7 +55,6 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 		 
 		 
 		 //Database authentication provider 
-		 auth.authenticationProvider(entrenadorauthenticationProvider);
-		 auth.authenticationProvider(deportistaauthenticationProvider);
+		 auth.authenticationProvider(authenticationProvider);
 	}
 }

@@ -2,14 +2,13 @@ package com.example.AES.controllers;
 
 
 
-import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.PostMapping;
+
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -21,12 +20,12 @@ import com.example.AES.models.*;
 public class DeportistaController {
 	
 	@Autowired
-	DeportistaRepository deportistaRepository;
+	UsuarioRepository usuarioRepository;
 
 	@RequestMapping("/deportista")
 	public String Deportista (Model model, @RequestParam String em/*, HttpServletRequest request*/) {
 		
-			Deportista deportista = (Deportista) deportistaRepository.findByEmail(em);
+			Deportista deportista = (Deportista) usuarioRepository.findByEmail(em);
 			model.addAttribute("nombreDeportista", deportista.getNombre());			
 			model.addAttribute("equipoDeportista", deportista.getEquipo().getNombre());
 			model.addAttribute("emailDeportista", deportista.getEmail());

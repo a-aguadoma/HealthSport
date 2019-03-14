@@ -16,9 +16,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import javax.annotation.PostConstruct;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -38,21 +35,18 @@ import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 public class RegistroController  implements CommandLineRunner {
 	
 	@Autowired
-	private DeportistaRepository deportistaRepository;
+	private UsuarioRepository usuarioRepository;
 	
 	@Autowired
 	private EquipoRepository equipoRepository;
-	
-	@Autowired
-	private EntrenadorRepository entrenadorRepository;
 	
 
 	@PostMapping(value="/nuevoDeportista")	
 	public String registroDeportista(@RequestParam String nombre,@RequestParam String email, @RequestParam String pass){   
 		
 		//Registro del deportista
-		Deportista nuevoDeportista = new Deportista (nombre, email, pass, equipoRepository.findByNombre("sinEquipo"), null);
-		deportistaRepository.save(nuevoDeportista);
+		Deportista nuevoDeportista = new Deportista (nombre, email, pass, equipoRepository.findByNombre("sinEquipo"), null, "DEPORTISTA");
+		usuarioRepository.save(nuevoDeportista);
 			
 		//Envio de correo mediante servicio interno
 		 String url= "http://localhost:8080/correo/" + nombre + "/" + email + "/" + "deportista";
@@ -72,8 +66,8 @@ public class RegistroController  implements CommandLineRunner {
 		equipoRepository.save(equipo);
 		
 		//Registro del entrenador
-		Entrenador nuevoEntrenador = new Entrenador(nombre, pass, email, equipoRepository.findByNombre(nombreEquipo));
-		entrenadorRepository.save(nuevoEntrenador);	
+		Entrenador nuevoEntrenador = new Entrenador(nombre, pass, email, equipoRepository.findByNombre(nombreEquipo), "ENTRENADOR");
+		usuarioRepository.save(nuevoEntrenador);	
 		
 		//Envio de correo mediante servicio interno
 		 String url= "http://localhost:8080/correo/" + nombre + "/" + email + "/" + "entrenador";
@@ -89,10 +83,10 @@ public class RegistroController  implements CommandLineRunner {
 		equipoRepository.save(new Equipo("invencibles", "baloncesto", "clave", null,  null, null));
 		equipoRepository.save(new Equipo("sinEquipo", null , null, null,  null, null));
 
-		entrenadorRepository.save(new Entrenador("Antonio", "pass", "antonio@urjc.es", equipoRepository.findByClave("clave")));
+		usuarioRepository.save(new Entrenador("Antonio", "pass", "antonio@urjc.es", equipoRepository.findByClave("clave"), "ENTRENADOR"));
 
-		deportistaRepository.save(new Deportista("Paco", "paco@urjc.es", "pass", equipoRepository.findByNombre("sinEquipo"), null));
-		deportistaRepository.save(new Deportista("Chloe", "chloe@urjc.es", "pass", equipoRepository.findByNombre("sinEquipo"), null));
+		usuarioRepository.save(new Deportista("Paco", "paco@urjc.es", "pass", equipoRepository.findByNombre("sinEquipo"), null, "DEPORTISTA"));
+		usuarioRepository.save(new Deportista("Chloe", "chloe@urjc.es", "pass", equipoRepository.findByNombre("sinEquipo"), null, "DEPORTISTA"));
 		 
 		 }
 	

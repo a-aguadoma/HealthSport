@@ -18,20 +18,21 @@ public class HealthSportApplication {
 		SpringApplication.run(HealthSportApplication.class, args);
 	}
 	
-	@RequestMapping("/entrenador")
-	public String entrenador(Model model, HttpServletRequest request) {
-
-	 model.addAttribute("entrenador", request.isUserInRole("ENTRENADOR"));
-	 return "entrenador";
-	}
+	/*
+	 * @RequestMapping("/entrenador") public String entrenador(Model model,
+	 * HttpServletRequest request) {
+	 * 
+	 * model.addAttribute("entrenador", request.isUserInRole("ENTRENADOR")); return
+	 * "entrenador"; }
+	 */
 	
-	@RequestMapping("/deportista")
-	public String deportista(Model model, HttpServletRequest request) {
-
-	 model.addAttribute("deportista", request.isUserInRole("DEPORTISTA"));
-	 return "deportista";
-	}
-	
+	/*
+	 * @RequestMapping("/deportista") public String deportista(Model model,
+	 * HttpServletRequest request) {
+	 * 
+	 * model.addAttribute("deportista", request.isUserInRole("DEPORTISTA"));
+	 * return "deportista"; // }
+	 */	
 	/*@RequestMapping("/login")
 	public String login(Model model, HttpServletRequest request) {
 
@@ -68,14 +69,5 @@ public class HealthSportApplication {
 	 public String home() {
 	 return "home";
 	 }
-	
-	/*
-	 * @RequestMapping("/calendario") public String calendario(Model model) { return
-	 * "calendario"; }
-	 */
-	
-	
-
-
 }
 
