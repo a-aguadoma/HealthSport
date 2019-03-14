@@ -1,12 +1,19 @@
 package com.example.AES.models;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+
+import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 @Entity
 
@@ -20,6 +27,9 @@ public class Deportista {
 	private String email;
 	private String pass;
 	
+	@ElementCollection(fetch = FetchType.EAGER)
+	private List<String> roles;
+	
 	@ManyToOne
 	private Equipo equipo;
 	
@@ -28,23 +38,18 @@ public class Deportista {
 	
 	public Deportista() {}
 	
-	public Deportista(String nombre, String email, String pass, Equipo equipo, List<Estadisticas> estadisticas) {
+	public Deportista(String nombre, String email, String pass, Equipo equipo, List<Estadisticas> estadisticas,String... roles) {
 		this.nombre=nombre;
 		this.email=email;
-		this.pass=pass;
+		this.pass=new BCryptPasswordEncoder().encode(pass);
 		this.equipo=equipo;
 		this.estadisticas=estadisticas;		
+		this.roles = new ArrayList<>(Arrays.asList(roles));
 		
 		/*List<Deportista> list = equipo.getDeportistas();
 		list.add(this);
 		
 		equipo.setDeportistas(list);*/
-	}
-	
-	public Deportista(String email, String pass) {
-		
-		this.email=email;
-		this.pass=pass;
 	}
 
 	public long getId() {
@@ -81,6 +86,14 @@ public class Deportista {
 
 	public Equipo getEquipo() {
 		return equipo;
+	}
+	
+	public List<String> getRoles() {
+		return roles;
+	}
+
+	public void setRoles(List<String> roles) {
+		this.roles = roles;
 	}
 
 	public void setEquipo(Equipo equipo) {

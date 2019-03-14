@@ -1,10 +1,18 @@
 package com.example.AES.models;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
+
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 @Entity
 public class Entrenador {
@@ -17,22 +25,21 @@ public class Entrenador {
 	private String email;
 	private String pass;
 	
+	@ElementCollection(fetch = FetchType.EAGER)
+	private List<String> roles;
+	
 	@OneToOne
 	private Equipo equipo;
 	
 	public Entrenador() {}
 	
-	public Entrenador(String nombre, String pass, String email, Equipo equipo) {
+	public Entrenador(String nombre,String email,String pass, Equipo equipo,String... roles) {
 		this.nombre=nombre;
-		this.pass=pass;
 		this.email=email;
+		this.pass=new BCryptPasswordEncoder().encode(pass);
 		this.equipo=equipo;
+		this.roles = new ArrayList<>(Arrays.asList(roles));
 		
-	}
-	
-	public Entrenador(String email, String pass) {
-		this.email=email;
-		this.pass=pass;
 	}
 
 	
@@ -72,6 +79,14 @@ public class Entrenador {
 
 	public void setEquipo(Equipo equipo) {
 		this.equipo = equipo;
+	}
+	
+	public List<String> getRoles() {
+		return roles;
+	}
+
+	public void setRoles(List<String> roles) {
+		this.roles = roles;
 	}
 
 	@Override

@@ -10,6 +10,10 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 
 @Configuration
 public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
+	@Autowired
+	public EntrenadorRepositoryAuthProvider entrenadorauthenticationProvider;
+	
+	public DeportistaRepositoryAuthProvider deportistaauthenticationProvider;
 	@Override
 	 protected void configure(HttpSecurity http) throws Exception {
 
@@ -22,8 +26,8 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 	 http.authorizeRequests().antMatchers("/registroEntrenador").permitAll();
 	 http.authorizeRequests().antMatchers("/registroDeportista").permitAll();
 	 //PAGINAS PRIVADAS
-	// http.authorizeRequests().anyRequest("/entrenador").authenticated();
-	 //http.authorizeRequests().anyRequest("/deportista").authenticated();
+	 http.authorizeRequests().antMatchers("/entrenador").hasAnyRole("ENTRENADOR");
+	 http.authorizeRequests().antMatchers("/deportista").hasAnyRole("DEPORTISTA");
 	 // Login form
 	 http.formLogin().loginPage("/login");
 	 http.formLogin().usernameParameter("email");
@@ -35,6 +39,22 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 	 http.logout().logoutSuccessUrl("/");
 
 	 // Disable CSRF at the moment
-	 http.csrf().disable();
+	 //http.csrf().disable();
+	}
+	
+	 @Override
+	 protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+
+		 // User
+		 auth.inMemoryAuthentication().withUser("Deportista").password("pass").roles("DEPORTISTA");
+		 // Trainer
+		 auth.inMemoryAuthentication().withUser("Entrenador").password("pass").roles("ENTRENADOR");
+		 // Admin 
+		// auth.inMemoryAuthentication().withUser("Admin").password("adminpass").roles("CLIENT", "TRAINER", "ADMIN");
+		 
+		 
+		 //Database authentication provider 
+		 auth.authenticationProvider(entrenadorauthenticationProvider);
+		 auth.authenticationProvider(deportistaauthenticationProvider);
 	}
 }
