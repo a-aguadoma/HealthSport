@@ -19,9 +19,8 @@ public class Deportista extends Usuario{
 	
 	public Deportista() {}
 	
-	public Deportista(String nombre, String email, String passwordHash, Equipo equipo, List<Estadisticas> estadisticas, String rol) {
-		
-		super(nombre,email,passwordHash,rol);
+	public Deportista(String nombre, String email, String passwordHash, Equipo equipo, List<Estadisticas> estadisticas, String... roles) {
+		super(nombre,email,passwordHash,roles);
 		this.equipo=equipo;
 		this.estadisticas=estadisticas;
 		

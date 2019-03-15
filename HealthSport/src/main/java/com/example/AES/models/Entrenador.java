@@ -12,8 +12,8 @@ public class Entrenador extends Usuario {
 	
 	public Entrenador() {}
 	
-	public Entrenador(String nombre,String email,String passwordHash, Equipo equipo,String rol) {
-		super(nombre,email,passwordHash,rol);
+	public Entrenador(String nombre,String email,String passwordHash, Equipo equipo,String... roles) {
+		super(nombre,email,passwordHash,roles);
 		this.equipo=equipo;
 		
 	}

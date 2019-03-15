@@ -8,52 +8,31 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.example.AES.models.*;
 import com.example.AES.repositories.*;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.web.csrf.CsrfToken;
 import org.springframework.stereotype.Controller;
 
 
 @Controller
 public class LoginController {
 	
-	//a�ADIR FINDBYEMAILANDPASS EN LOS DOS REPOSITORIOS Y LOS CONTRASE�AS
-	
 	@RequestMapping("/loginerror")
 	public String deportista(Model model) {
 		return "loginerror";
 	}
 	
-	@Autowired
-	UsuarioRepository usuarioRepositorio;
-	
+	@RequestMapping("/login")
+	public String login(Model model, HttpServletRequest request) {
 
-	@PostMapping(value="/login")
-	public String login (Model model,@RequestParam String email, @RequestParam String pass) {
+	 return "login";
+	}
 	
-		while ((email!="")&&(pass!="")){
-			
-			
-			if  (usuarioRepositorio.findByEmailAndPasswordHash(email,pass)!=null) {
-				
-				return("entrenador?em="+ email);
-				
-			}
-			
-			if  (usuarioRepositorio.findByEmailAndPasswordHash(email,pass)!=null) {
-				
-				return "deportista?em="+email;
-				
-			} 	
-			
-			if ((usuarioRepositorio.findByEmailAndPasswordHash(email, pass)==null) 
-					||  (usuarioRepositorio.findByEmailAndPasswordHash(email, pass)!=null)) {
-					
-					return "loginerror";
-				}
-			
-		}
-		
-		return "loginerror";
+	@RequestMapping("/quienessomos")
+	public String quienessomos(Model model,HttpServletRequest request) {
 
+		return "quienessomos";
 	}
 		
 	

@@ -3,6 +3,8 @@ package com.example.AES.repositories;
 
 import java.util.List;
 
+import javax.persistence.Cacheable;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.example.AES.models.*;
@@ -20,7 +22,9 @@ public interface UsuarioRepository extends JpaRepository<Usuario, Long> {
 	
 	Usuario findByEmailAndPasswordHash(String email,String passwordHash);
 	
-	String findByRolIn(String rol);
+	
+	List<Usuario> findByRolesIn(String roles);
+	//String findByRolIn(String rol);
 	
 	
 

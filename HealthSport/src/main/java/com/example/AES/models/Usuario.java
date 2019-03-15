@@ -1,7 +1,13 @@
 package com.example.AES.models;
 
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -17,18 +23,22 @@ public class Usuario {
 	private String nombre;
 	private String email; 
 	private String passwordHash;
-	private String rol;
+	//private String rol;
+	
+	@ElementCollection(fetch = FetchType.EAGER)
+	private List<String> roles;
 	
 	
 	
 	protected Usuario() {}
 	
 	
-	public Usuario (String nombre, String email, String passwordHash, String rol) {
+	public Usuario (String nombre, String email, String passwordHash, String... roles) {
 		this.nombre = nombre;
 		this.email = email;
 		this.passwordHash = new BCryptPasswordEncoder().encode(passwordHash); 
-		this.rol = rol;
+		this.roles = new ArrayList<>(Arrays.asList(roles));
+		//this.rol = rol;
 	}
 	
 
@@ -56,13 +66,12 @@ public class Usuario {
 		this.passwordHash = passwordHash;
 	} 
 	
-	public String getRol() {
-		return rol;
+	public List<String> getRoles() {
+		return roles;
 	}
 
-	public void setRol(String rol) {
-		this.rol = rol;
+	public void setRoles(List<String> roles) {
+		this.roles = roles;
 	}
-	
 	
 }
