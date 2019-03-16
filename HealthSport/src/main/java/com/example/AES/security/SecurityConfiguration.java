@@ -29,17 +29,17 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 	 http.authorizeRequests().antMatchers("/nuevoEntrenador").permitAll();
 	 http.authorizeRequests().antMatchers("/nuevoDeportista").permitAll();
 	 //PAGINAS PRIVADAS
-	 //http.authorizeRequests().antMatchers("/entrenador").hasAnyRole("ENTRENADOR");
-	 //http.authorizeRequests().antMatchers("/deportista").hasAnyRole("DEPORTISTA");
-	 http.authorizeRequests().antMatchers("/home").hasAnyRole("USER");
+	 http.authorizeRequests().antMatchers("/entrenador").hasAnyRole("ENTRENADOR");
+	 http.authorizeRequests().antMatchers("/deportista").hasAnyRole("DEPORTISTA");
+	 //http.authorizeRequests().antMatchers("/").hasAnyRole("USER");
 	 // Login form
 	 http.formLogin().loginPage("/login");
 	 http.formLogin().usernameParameter("email");
 	 http.formLogin().passwordParameter("pass");
-	 http.formLogin().defaultSuccessUrl("/home");
+	 http.formLogin().defaultSuccessUrl("/perfil");
 	 http.formLogin().failureUrl("/loginerror");
 	 // Logout
-	 //http.logout().logoutUrl("/logout");
+	 http.logout().logoutUrl("/logout");
 	 http.logout().logoutSuccessUrl("/");
 
 	 // Disable CSRF at the moment
@@ -52,9 +52,9 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 		 // User
 		 auth.inMemoryAuthentication().withUser("user").password("pass").roles("USER");
 		 
-		 //auth.inMemoryAuthentication().withUser("Deportista").password("pass").roles("DEPORTISTA");
+		 auth.inMemoryAuthentication().withUser("deportista").password("pass").roles("DEPORTISTA");
 		 // Trainer
-		// auth.inMemoryAuthentication().withUser("Entrenador").password("pass").roles("ENTRENADOR");
+		 auth.inMemoryAuthentication().withUser("entrenador").password("pass").roles("ENTRENADOR");
 		 // Admin 
 		// auth.inMemoryAuthentication().withUser("Admin").password("adminpass").roles("CLIENT", "TRAINER", "ADMIN");
 		 

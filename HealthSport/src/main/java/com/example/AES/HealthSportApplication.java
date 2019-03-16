@@ -23,41 +23,18 @@ public class HealthSportApplication {
 		SpringApplication.run(HealthSportApplication.class, args);
 	}
 	
-	/*
-	 * @RequestMapping("/entrenador") public String entrenador(Model model,
-	 * HttpServletRequest request) {
-	 * 
-	 * model.addAttribute("entrenador", request.isUserInRole("ENTRENADOR")); return
-	 * "entrenador"; }
-	 */
-	
-	/*
-	 * @RequestMapping("/deportista") public String deportista(Model model,
-	 * HttpServletRequest request) {
-	 * 
-	 * model.addAttribute("deportista", request.isUserInRole("DEPORTISTA"));
-	 * return "deportista"; // }
-	 */	
-	/*@RequestMapping("/login")
-	public String login(Model model, HttpServletRequest request) {
 
-	 CsrfToken token = (CsrfToken) request.getAttribute("_csrf");
-	 model.addAttribute("token", token.getToken());
-
-	 return "login";
-	}
-	*/
 	
 	
 	/*@RequestMapping("/index")
 	public String greeting(Model model) {
 		return "index";
 	}*/
-/*
+
 	@RequestMapping("/quienessomos")
 	public String quienessomos(Model model) {
 		return "quienessomos";
-	}*/
+	}
 	
 	@RequestMapping("/registroGeneral")
 	public String registroGeneral(Model model) {

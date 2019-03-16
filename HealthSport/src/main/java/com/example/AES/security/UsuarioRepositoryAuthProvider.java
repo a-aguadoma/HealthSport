@@ -26,7 +26,12 @@ public class UsuarioRepositoryAuthProvider implements AuthenticationProvider{
 	@Override
 	public Authentication authenticate(Authentication auth) throws AuthenticationException {
 		
-		Usuario user = userRepository.findByNombre(auth.getName());
+		//Usuario user = userRepository.findByNombre(auth.getName());
+		
+		String email = auth.getName(); //getEmail
+		String passwordHash = (String) auth.getCredentials();
+
+		Usuario user = userRepository.findByEmail(email);
 	 
 		 if (user == null) {
 			 throw new BadCredentialsException("User not found");
@@ -42,38 +47,8 @@ public class UsuarioRepositoryAuthProvider implements AuthenticationProvider{
 			 roles.add(new SimpleGrantedAuthority(role));
 		 }
 		 
-		 return new UsernamePasswordAuthenticationToken(user.getNombre(), password, roles);
-		 }
-
-	
-/*
-	@Autowired
-	private UsuarioRepository usuarioRepositorio;
-	
-	
-	public Authentication authenticate(Authentication auth) throws AuthenticationException {
-		
-		String email = auth.getName(); //getEmail
-		String passwordHash = (String) auth.getCredentials();
-
-		Usuario usuario = usuarioRepositorio.findByEmail(email);
-
-		if (usuario == null || !new BCryptPasswordEncoder().matches(passwordHash, usuario.getPasswordHash())) {
-			throw new BadCredentialsException("Usuario o contraseÃ±a incorrectos");
-			
-		} else {
-			
-			
-			String role= usuario.getRoles();
-			
-			List<GrantedAuthority> roles = new ArrayList<>();
-			roles.add(new SimpleGrantedAuthority(role));
-				
-			return new UsernamePasswordAuthenticationToken(usuario.getEmail(), passwordHash, roles);
-			
-		}	*/
-	
-	
+		 return new UsernamePasswordAuthenticationToken(user.getEmail(), password, roles);
+		 }	
 	
 	@Override
 	public boolean supports(Class<?> authenticationObject) {
