@@ -22,6 +22,12 @@ public class DatabaseUserLoader {
 	
 	userRepository.save(
 	 new Usuario("s", "s@urjc.com", "pass", "equipochachi", "ROLE_USER"));
+	
+	userRepository.save(
+			 new Usuario("e", "e@urjc.com", "pass", "equipochachi", "ROLE_ENTRENADOR"));
+	
+	userRepository.save(
+			 new Usuario("d", "d@urjc.com", "pass", "equipochachi", "ROLE_DEPORTISTA"));
 	 
 	 userRepository.save(
 	 new Usuario("a","a","entrenador"));
