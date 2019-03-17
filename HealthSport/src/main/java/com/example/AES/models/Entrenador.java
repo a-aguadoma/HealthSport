@@ -3,7 +3,11 @@ package com.example.AES.models;
 
 import javax.persistence.*;
 
+import org.springframework.stereotype.Component;
+import org.springframework.web.context.annotation.SessionScope;
+
 @Entity
+@SessionScope
 public class Entrenador extends Usuario {
 	
 	

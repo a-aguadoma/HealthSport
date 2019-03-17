@@ -71,7 +71,10 @@ public class EquipoController {
 			
 			
 			//Lista de deportistas que componen el equipo
+			
 			List<Deportista> listaComponentes = equipo.getDeportistas();
+			
+			if(listaComponentes!=null) {
 			
 			for(int i = 1; i <= listaComponentes.size(); i++) {
 				model.addAttribute("componente" + i, listaComponentes.get(i-1).getNombre());
@@ -83,7 +86,7 @@ public class EquipoController {
 				model.addAttribute("email" + i, "-");
 			}
 			
-			
+			}
 			//Lista de deportistas sin equipo
 			Equipo se = (Equipo) equipoRepository.findByNombre("sinEquipo");
 			

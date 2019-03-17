@@ -45,7 +45,7 @@ public class RegistroController  implements CommandLineRunner {
 	public String registroDeportista(@RequestParam String nombre,@RequestParam String email, @RequestParam String pass){   
 		
 		//Registro del deportista
-		Deportista nuevoDeportista = new Deportista (nombre, email, pass, equipoRepository.findByNombre("sinEquipo"), null, "DEPORTISTA");
+		Deportista nuevoDeportista = new Deportista (nombre, email, pass, equipoRepository.findByNombre("sinEquipo"), null, "ROLE_DEPORTISTA");
 		usuarioRepository.save(nuevoDeportista);
 			
 		//Envio de correo mediante servicio interno
@@ -54,7 +54,6 @@ public class RegistroController  implements CommandLineRunner {
 		 rest.getForObject(url, String.class);
 		 System.out.println("Datos enviados! " + nombre + " " + email);
 		 
-			
 		return("deportista?em="+ email);				
 	}
 	
@@ -66,7 +65,7 @@ public class RegistroController  implements CommandLineRunner {
 		equipoRepository.save(equipo);
 		
 		//Registro del entrenador
-		Entrenador nuevoEntrenador = new Entrenador(nombre, pass, email, equipoRepository.findByNombre(nombreEquipo), "ENTRENADOR");
+		Entrenador nuevoEntrenador = new Entrenador(nombre, pass, email, equipoRepository.findByNombre(nombreEquipo), "ROLE_ENTRENADOR");
 		usuarioRepository.save(nuevoEntrenador);	
 		
 		//Envio de correo mediante servicio interno

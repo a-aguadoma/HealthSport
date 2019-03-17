@@ -60,7 +60,7 @@ public class LoginController {
 	public String redireccion(Model model,HttpServletRequest request) {
 
 		if (request.isUserInRole("ENTRENADOR")) {
-
+			
 			return ("redirect:/entrenador");
 
 
