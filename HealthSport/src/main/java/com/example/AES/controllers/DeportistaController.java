@@ -3,6 +3,8 @@ package com.example.AES.controllers;
 
 
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,12 +25,28 @@ public class DeportistaController {
 	UsuarioRepository usuarioRepository;
 
 	@RequestMapping("/deportista")
-	public String Deportista (Model model, @RequestParam String em/*, HttpServletRequest request*/) {
+	public String Deportista (Model model, HttpServletRequest request) {
 		
-			Deportista deportista = (Deportista) usuarioRepository.findByEmail(em);
+			Deportista deportista = (com.example.AES.models.Deportista) usuarioRepository.findByEmail(request.getUserPrincipal().getName());
+
+			//Deportista deportista = (Deportista) usuarioRepository.findByEmail(em);
 			model.addAttribute("nombreDeportista", deportista.getNombre());			
 			model.addAttribute("equipoDeportista", deportista.getEquipo().getNombre());
 			model.addAttribute("emailDeportista", deportista.getEmail());
+			
+			List<Evento> listaEventos = deportista.getEquipo().getEventos();
+			int lE=0;
+			
+			if(listaEventos!=null) {
+				for(int i = 1; i <= listaEventos.size(); i++) {
+					model.addAttribute("nombre" + i, listaEventos.get(i-1).getNombre());
+					model.addAttribute("deporte" + i, listaEventos.get(i-1).getDeporte());
+					model.addAttribute("tipo" + i, listaEventos.get(i-1).getTipo());
+					model.addAttribute("fecha" + i, listaEventos.get(i-1).getFecha());
+					model.addAttribute("lugar" + i, listaEventos.get(i-1).getLugar());
+				}
+				lE = listaEventos.size();			
+			}
 			//model.addAttribute("Registrado como", "Deportista");	
 			
 			/*List<Evento> listaEventos = deportista.getEquipo().getEventos();

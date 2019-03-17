@@ -32,7 +32,7 @@ import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
 
 @Controller
-public class RegistroController  implements CommandLineRunner {
+public class RegistroController  /*implements CommandLineRunner */{
 	
 	@Autowired
 	private UsuarioRepository usuarioRepository;
@@ -77,7 +77,7 @@ public class RegistroController  implements CommandLineRunner {
 		return("entrenador?em="+ email);
 	}
 	
-	public void run(String... args) throws Exception {
+/*	public void run(String... args) throws Exception {
 		
 		equipoRepository.save(new Equipo("invencibles", "baloncesto", "clave", null,  null, null));
 		equipoRepository.save(new Equipo("sinEquipo", null , null, null,  null, null));
@@ -87,7 +87,7 @@ public class RegistroController  implements CommandLineRunner {
 		usuarioRepository.save(new Deportista("Paco", "paco@urjc.es", "pass", equipoRepository.findByNombre("sinEquipo"), null, "DEPORTISTA"));
 		usuarioRepository.save(new Deportista("Chloe", "chloe@urjc.es", "pass", equipoRepository.findByNombre("sinEquipo"), null, "DEPORTISTA"));
 		 
-		 }
+		 }*/
 	
 	@RequestMapping("/registroDeportista")
 	public String registroDeportista(Model model) {

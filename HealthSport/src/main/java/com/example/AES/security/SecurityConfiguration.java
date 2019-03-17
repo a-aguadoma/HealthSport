@@ -28,9 +28,14 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 	 http.authorizeRequests().antMatchers("/registroDeportista").permitAll();
 	 http.authorizeRequests().antMatchers("/nuevoEntrenador").permitAll();
 	 http.authorizeRequests().antMatchers("/nuevoDeportista").permitAll();
+	 //http.authorizeRequests().antMatchers("/equipoEntrenador").permitAll();
+	 //http.authorizeRequests().antMatchers("/equipoDeportista").permitAll();
+
 	 //PAGINAS PRIVADAS
 	 http.authorizeRequests().antMatchers("/entrenador").hasAnyRole("ENTRENADOR");
+	 http.authorizeRequests().antMatchers("/equipoEntrenador").hasAnyRole("ENTRENADOR");
 	 http.authorizeRequests().antMatchers("/deportista").hasAnyRole("DEPORTISTA");
+	 http.authorizeRequests().antMatchers("/equipoDeportista").hasAnyRole("DEPORTISTA");
 	 //http.authorizeRequests().antMatchers("/").hasAnyRole("USER");
 	 // Login form
 	 http.formLogin().loginPage("/login");

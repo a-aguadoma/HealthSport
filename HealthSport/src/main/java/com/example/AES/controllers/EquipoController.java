@@ -2,6 +2,8 @@ package com.example.AES.controllers;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -21,10 +23,11 @@ public class EquipoController {
 	UsuarioRepository usuarioRepository;
 	
 	@RequestMapping("/equipoDeportista")
-	public String Equipo (Model model, @RequestParam String eq) {
+	public String Equipo (Model model, HttpServletRequest request) {
 		
-		
-			Equipo equipo = (Equipo) equipoRepository.findByNombre(eq);
+			Equipo equipo = (com.example.AES.models.Equipo) equipoRepository.findByNombre("aprende");
+
+			//Equipo equipo = (Equipo) equipoRepository.findByNombre(eq);
 			
 			//Si el deportista NO tiene equipo, muestra la tabla vacia
 			if(equipo.getNombre().equals("sinEquipo")){
@@ -62,10 +65,11 @@ public class EquipoController {
 	}
 	
 	@RequestMapping("/equipoEntrenador")
-	public String EquipoEntrenador (Model model, @RequestParam String eq) {
+	public String EquipoEntrenador (Model model, HttpServletRequest request) {
 		
 		
-			Equipo equipo = (Equipo) equipoRepository.findByNombre(eq);
+			//Equipo equipo = (Equipo) equipoRepository.findByNombre(eq);
+			Equipo equipo = (com.example.AES.models.Equipo) equipoRepository.findByNombre("aprende");
 			model.addAttribute("nombreEquipo", equipo.getNombre());		
 			model.addAttribute("deporte", equipo.getDeporte());
 			
