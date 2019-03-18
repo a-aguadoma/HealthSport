@@ -43,7 +43,6 @@ public class RegistroController  /*implements CommandLineRunner */{
 	@PostMapping(value="/nuevoDeportista")	
 	public String registroDeportista(@RequestParam String nombre,@RequestParam String email, @RequestParam String pass){   
 		
-		equipoRepository.save(new Equipo("aprende", "programar", null, null, null, null));
 		
 		if(usuarioRepository.findByEmail(email) == null) {
 			//Registro del deportista
@@ -76,7 +75,7 @@ public class RegistroController  /*implements CommandLineRunner */{
 			
 			
 			//Registro del entrenador
-			Entrenador nuevoEntrenador = new Entrenador(nombre, pass, email, null , "ROLE_ENTRENADOR");
+			Entrenador nuevoEntrenador = new Entrenador(nombre, email, pass, null , "ROLE_ENTRENADOR");
 			usuarioRepository.save(nuevoEntrenador);
 			
 			//Registro del equipo
