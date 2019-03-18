@@ -1,75 +1,111 @@
 # HealthSport
 
-## Fase 1:
-
-HealthSport es una aplicación para monitorizar y analizar constantes vitales, rendimiento y demás puntos clave en actividades deportivas.
-
-Parte pública - Los invitados recibiran informacion acerca del funcionamiento de la app y podran registrarse en ésta, asi como consultar el equipo de desarrollo.
-
-Parte privada - Los entrenadores apuntaran a sus equipos a diferentes competiciones, y podran consultar sus integrantes y estadisticas. Los deportistas podran consultar los eventos en los que han participado y las estadisticas obtenidas en éstos.
-
-El servicio interno se utilizara para enviar correos y eventos a los usuarios y procesar datos recogidos en las competiciones.
+HealthSport es una aplicación que permite a los componentes de un equipo deportivo (tanto deportistas como entrenadores) coordinarse, monitorizar resultados y demás puntos clave en actividades deportivas.
 
 
--Equipo de desarrollo:
+## DIAGRAMAS DE LA APLICACIÓN
 
-Alberto Aguado Martínez - a-aguadoma a.aguadomar@alumnos.urjc.es
+### Diagrama UML
+![DiagramaUML](https://github.com/a-aguadoma/HealthSport/blob/master/Imagenes/UML_Fase3.jpeg)
 
-Sandra Juan San Román - sandrajsr93 s.juan@alumnos.urjc.es
+### Diagrama Entidad Relación
+![DiagramaER](https://github.com/a-aguadoma/HealthSport/blob/master/Imagenes/BaseDeDatos.jpeg)
 
-Elena Garcia-Morato Piñan - elenagarciamorato e.garciapi@alumnos.urjc.es
-
-Para cooordinarse, el equipo utilizará la herrramienta Trello: https://trello.com/b/v0LyzdMs/healthsport 
-
-
--Entidades. Las entidades que forman el programa son: Entrenador, Deportista, Equipo, Constantes Vitales, Estadisticas Grupales y Competiciones, distribuidas de la siguiente forma:
-
-### Diagrama UML1
-![DiagramaUML1](https://github.com/a-aguadoma/HealthSport/blob/master/Imagenes/diagrama_uml.jpg)
+### Diagrama de Navegación
+![DiagramaNavegacion](https://github.com/a-aguadoma/HealthSport/blob/master/Imagenes/DiagramaDeNavegacion.jpeg)
 
 
-## Fase 2:
-
-### DIAGRAMA UML
-![DiagramaUML2](https://github.com/a-aguadoma/HealthSport/blob/master/Imagenes/UML2.1.jpg)
-
-### DIAGRAMA ENTIDAD/RELACION
-![DiagramaER](https://github.com/a-aguadoma/HealthSport/blob/master/Imagenes/er2.jpg)
-
-### DIAGRAMA DE NAVEGACION
-![DiagramaNavegacion2](https://github.com/a-aguadoma/HealthSport/blob/master/Imagenes/navegacion2.jpg)
-
-### PAGINAS PRINCIPALES
+## PAGINAS PRINCIPALES
 
 ### INDEX
-Pagina principal desde la que se presenta minimamente la aplicación, el equipo y en la que encontramos los enlaces a las paginas principales.
+Pagina principal desde la que se presenta la aplicación y en la que encontramos los enlaces a las paginas principales.
 
-![Index](https://github.com/a-aguadoma/HealthSport/blob/master/Imagenes/index.jpg)
+![Index](https://github.com/a-aguadoma/HealthSport/blob/master/Imagenes/Index.jpg)
 
 ### LOGIN
 Página de inicio de sesion, en la cual iniciaran sesion tanto los deportistas como los entrenadores.
 
-![Login](https://github.com/a-aguadoma/HealthSport/blob/master/Imagenes/login2.jpg)
+![Login](https://github.com/a-aguadoma/HealthSport/blob/master/Imagenes/Login.jpg)
 
-### REGISTRO
-Página de registro en la cual los usuarios, tanto deportisca como entrenador, obtendran sus credenciales y serán registrados en la Base de Datos.
+### REGISTRO GENERAL
+Página de registro en la cual los usuarios seleccionan si querran registrarse como deportistas o como entrenadores.
 
-![registro](https://github.com/a-aguadoma/HealthSport/blob/master/Imagenes/registro2.jpg)
+![RegistroGeneral](https://github.com/a-aguadoma/HealthSport/blob/master/Imagenes/RegistroGeneral.jpg)
+
+### REGISTRO DEPORTISTA
+Página de registro en la cual los deportistas rellenan sus datos, obtienen sus credenciales y son registrados en la Base de Datos.
+
+![RegistroDeportista](https://github.com/a-aguadoma/HealthSport/blob/master/Imagenes/RegistroDeportista.jpg)
+
+### REGISTRO ENTRENADOR
+Página de registro en la cual los entrenadores rellenan sus datos y los del equipo que quieren formar, obtienen sus credenciales y son registrados en la Base de Datos.
+
+![RegistroEntrenador](https://github.com/a-aguadoma/HealthSport/blob/master/Imagenes/RegistroEntrenador.jpg)
 
 ### DEPORTISTA
-Página del deportista, podrá visualizar una rutina, las estadisticas de su equipo. Puede ver las gráficas de su propio rendimiento.
+Página donde el deportista puede consultar sus datos y sus ultimas estadisticas.
 
-![deportista](https://github.com/a-aguadoma/HealthSport/blob/master/Imagenes/deportista2.jpg)
+![Deportista](https://github.com/a-aguadoma/HealthSport/blob/master/Imagenes/Deportista.jpg)
 
 ### ENTRENADOR
-Página de entrenador, dispondrá de un grupo de deportistas, con los que podrá contactar, ajustando la rutina para que se adecue a cada deportista. Además puede ver todos los datos guardados y estadisticas por parte de los equipos.
+Página donde el entrenador podra consultar sus datos y registrar a su equipo en nuevos eventos.
 
-![entrenador](https://github.com/a-aguadoma/HealthSport/blob/master/Imagenes/entrenador2.jpg)
+![Entrenador](https://github.com/a-aguadoma/HealthSport/blob/master/Imagenes/Entrenador.jpg)
+
+### EQUIPO
+Página donde tanto el deportista como el entrenador pueden consultar los datos del equipo al que pertenecen. El entrenador, además, puede añadir nuevos componentes a su equipo.
+
+![EquipoEntrenador](https://github.com/a-aguadoma/HealthSport/blob/master/Imagenes/EquipoEntrenador.jpg)
 
 ### QUIENES SOMOS
 Página donde se presenta al equipo de HealthSport.
 
-![quienessomos2](https://github.com/a-aguadoma/HealthSport/blob/master/Imagenes/quienessomos2.jpg)
+![QuienesSomos](https://github.com/a-aguadoma/HealthSport/blob/master/Imagenes/QuienesSomos.jpg)
 
 
+## INSTRUCCIONES PARA DESPLEGAR LA APLICACIÓN:
 
+#### Instalar Java 8:
+
+sudo add-apt-repository ppa:openjdk-r/ppa
+
+sudo apt-get update
+
+sudo apt-get install openjdk-8-jre 
+
+
+#### Instalar MySQL Server:
+
+sudo apt-get update
+
+sudo apt-get install -y mysql-server 
+
+
+#### Crear un nuevo esquema:
+
+sudo mysql -u root -p
+
+mysql>CREATE DATABASE test;
+
+mysql>exit
+
+
+#### Ejecutar aplicación web:
+
+java -jar HealthSport-0.0.1-SNAPSHOT.jar
+
+
+#### Ejecutar servicio interno:
+
+java -jar ServicioInterno-0.0.1-SNAPSHOT.jar --password=****
+
+
+## Equipo de desarrollo:
+
+#### Alberto Aguado Martínez - a-aguadoma - a.aguadomar@alumnos.urjc.es
+
+#### Sandra Juan San Román - sandrajsr93 - s.juan@alumnos.urjc.es
+
+#### Elena Garcia-Morato Piñan - elenagarciamorato - e.garciapi@alumnos.urjc.es
+
+Para cooordinarse, el equipo utiliza la herrramienta Trello: https://trello.com/b/v0LyzdMs/healthsport 
