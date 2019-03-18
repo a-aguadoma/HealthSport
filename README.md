@@ -55,9 +55,8 @@ Página donde el entrenador podra consultar sus datos y registrar a su equipo en
 ### EQUIPO
 Página donde tanto el deportista como el entrenador pueden consultar los datos del equipo al que pertenecen. El entrenador, además, puede añadir nuevos componentes a su equipo.
 
-![EquipoEntrenador](https://github.com/a-aguadoma/HealthSport/blob/master/Imagenes/EquipoEntrenador.jpeg)
+![EquipoEntrenador](https://github.com/a-aguadoma/HealthSport/blob/master/Imagenes/EquipoEntrenador.jpg)
 
-![Deportista](https://github.com/a-aguadoma/HealthSport/blob/master/Imagenes/Deportista.jpg)
 ### QUIENES SOMOS
 Página donde se presenta al equipo de HealthSport.
 
