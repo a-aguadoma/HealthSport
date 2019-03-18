@@ -13,7 +13,7 @@ import com.example.AES.repositories.UsuarioRepository;
 
 @Component
 public class DatabaseUserLoader {
-	/*
+	
 	@Autowired
 	 private EquipoRepository er;
 	
@@ -43,6 +43,6 @@ public class DatabaseUserLoader {
 	 userRepository.save(
 	 new Usuario("a","a","entrenador"));
 	 }
-	*/
+	
 	
 }

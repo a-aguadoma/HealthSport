@@ -47,7 +47,7 @@ public class RegistroController  /*implements CommandLineRunner */{
 		
 		if(usuarioRepository.findByEmail(email) == null) {
 			//Registro del deportista
-				Deportista nuevoDeportista = new Deportista (nombre, email, pass, equipoRepository.findByNombre("aprende"), null, "ROLE_DEPORTISTA");
+				Deportista nuevoDeportista = new Deportista (nombre, email, pass, equipoRepository.findByNombre("sinEquipo"), null, "ROLE_DEPORTISTA");
 				usuarioRepository.save(nuevoDeportista);
 			
 			
@@ -74,13 +74,14 @@ public class RegistroController  /*implements CommandLineRunner */{
 		
 		if(usuarioRepository.findByEmail(email) == null) {
 			
-			//Registro del equipo
-			Equipo equipo = new Equipo(nombreEquipo, deporte, null, null, null, null);
-			equipoRepository.save(equipo);
 			
 			//Registro del entrenador
-			Entrenador nuevoEntrenador = new Entrenador(nombre, pass, email, equipoRepository.findByNombre(nombreEquipo), "ROLE_ENTRENADOR");
-			usuarioRepository.save(nuevoEntrenador);	
+			Entrenador nuevoEntrenador = new Entrenador(nombre, pass, email, null , "ROLE_ENTRENADOR");
+			usuarioRepository.save(nuevoEntrenador);
+			
+			//Registro del equipo
+			Equipo equipo = new Equipo(nombreEquipo, deporte, null, null, (Entrenador)usuarioRepository.findByEmail(email), null);
+			equipoRepository.save(equipo);
 			
 			//Envio de correo mediante servicio interno
 			 String url= "http://localhost:8080/correo/" + nombre + "/" + email + "/" + "entrenador";
