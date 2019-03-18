@@ -20,7 +20,7 @@ public class EntrenadorController {
 	UsuarioRepository usuarioRepository;
 	
 	@RequestMapping("/entrenador")
-	public String Entrenador (Model model, HttpServletRequest request/*, @RequestParam String em*/) {
+	public String Entrenador (Model model, HttpServletRequest request) {
 		
 			Entrenador entrenador = (com.example.AES.models.Entrenador) usuarioRepository.findByEmail(request.getUserPrincipal().getName());
 			model.addAttribute("nombreEntrenador", entrenador.getNombre());		

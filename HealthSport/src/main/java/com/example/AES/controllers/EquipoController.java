@@ -1,11 +1,14 @@
 package com.example.AES.controllers;
 
+import java.io.IOException;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.security.core.Authentication;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -23,14 +26,17 @@ public class EquipoController {
 	UsuarioRepository usuarioRepository;
 	
 	@RequestMapping("/equipoDeportista")
-	public String Equipo (Model model, HttpServletRequest request) {
+	public String Equipo (Model model, HttpServletRequest request, Authentication authentication) {
 		
-			Equipo equipo = (com.example.AES.models.Equipo) equipoRepository.findByNombre("aprende");
+			Deportista deportista = (com.example.AES.models.Deportista) usuarioRepository.findByEmail(request.getUserPrincipal().getName());	
+		    Equipo eq=deportista.getEquipo();
+			//Equipo eq = equipoRepository.findByNombre("aprende");
+			//Equipo equipo = (com.example.AES.models.Equipo) equipoRepository.findByNombre("aprende");
 
 			//Equipo equipo = (Equipo) equipoRepository.findByNombre(eq);
 			
 			//Si el deportista NO tiene equipo, muestra la tabla vacia
-			if(equipo.getNombre().equals("sinEquipo")){
+			if(eq.getNombre().equals("sinEquipo")){
 				
 				model.addAttribute("nombreEquipo", "Sin equipo asociado");		
 				model.addAttribute("deporte", "-");
@@ -43,10 +49,10 @@ public class EquipoController {
 			//Si el deportista SI tiene equipo, muestra la lista de componentes del equipo
 			}else{
 				
-				model.addAttribute("nombreEquipo", equipo.getNombre());		
-				model.addAttribute("deporte", equipo.getDeporte());
+				model.addAttribute("nombreEquipo", eq.getNombre());		
+				model.addAttribute("deporte", eq.getDeporte());
 			
-				List<Deportista> listaComponentes = equipo.getDeportistas();
+				List<Deportista> listaComponentes = eq.getDeportistas();
 				
 				for(int i = 1; i <= listaComponentes.size(); i++) {
 					model.addAttribute("componente" + i, listaComponentes.get(i-1).getNombre());
@@ -68,8 +74,10 @@ public class EquipoController {
 	public String EquipoEntrenador (Model model, HttpServletRequest request) {
 		
 		
-			//Equipo equipo = (Equipo) equipoRepository.findByNombre(eq);
-			Equipo equipo = (com.example.AES.models.Equipo) equipoRepository.findByNombre("aprende");
+			System.out.println("Entra");
+			Entrenador entrenador = (com.example.AES.models.Entrenador) usuarioRepository.findByEmail(request.getUserPrincipal().getName());	
+			Equipo equipo=entrenador.getEquipo();
+			
 			model.addAttribute("nombreEquipo", equipo.getNombre());		
 			model.addAttribute("deporte", equipo.getDeporte());
 			
@@ -111,18 +119,24 @@ public class EquipoController {
 	}
 	
 	@RequestMapping("/añadirDeportista")
-	public String AñadirDeportista (Model model, @RequestParam String equ, @RequestParam String dep) {
+	public void AñadirDeportista (Model model, @RequestParam String dep, HttpServletRequest request, HttpServletResponse response) {
 		
 		
-			Equipo equipo = (Equipo) equipoRepository.findByNombre(equ);
+			Entrenador entrenador = (com.example.AES.models.Entrenador) usuarioRepository.findByEmail(request.getUserPrincipal().getName());	
+			Equipo equipo=entrenador.getEquipo();
+		
 			Deportista deportista = (Deportista) usuarioRepository.findByNombre(dep);
-			
 			deportista.setEquipo(equipo);
 			
 			usuarioRepository.save(deportista);
 			
 	
-			return ("equipoEntrenador?eq="+ equ);
+			try {
+				response.sendRedirect("/equipoEntrenador");
+			} catch (IOException e) {
+				
+				
+			}
 		
 	}
 

@@ -23,18 +23,20 @@ public class DatabaseUserLoader {
 	 private void initDatabase() {
 
 	 
-	
-	er.save(new Equipo("aprende", "programar", null, null, null, null));
+	er.save(new Equipo("sinEquipo", "todos" , null, null, null, null));
+	//er.save(new Equipo("aprende", "programar", null, null, null, null));
 	
 	userRepository.save(
 	 new Usuario("s", "s@urjc.com", "pass", "equipochachi", "ROLE_USER"));
 	
 	userRepository.save(
-			 new Entrenador("eeeee", "e@urjc.com", "pass", er.findByNombre("aprende") , "ROLE_ENTRENADOR"));
+			 new Entrenador("eeeee", "e@urjc.com", "pass", null , "ROLE_ENTRENADOR"));
+			
 	
 	userRepository.save(
-			 new Deportista("duran", "d@urjc.com", "pass", er.findByNombre("aprende"), null , "ROLE_DEPORTISTA"));
+			 new Deportista("duran", "d@urjc.com", "pass", er.findByNombre("sinEquipo"), null , "ROLE_DEPORTISTA"));
 	
+	er.save(new Equipo("aprende", "programar", null, null, (Entrenador)userRepository.findByEmail("e@urjc.com"), null));
 	
 	//System.out.println(er.findByDeportistas("duran"));
 	

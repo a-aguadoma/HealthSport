@@ -23,12 +23,12 @@ public class Equipo {
 	private String deporte;
 	private String clave;
 	
-	//@JsonIgnore
+	@JsonIgnore
 	@OneToMany(mappedBy = "equipo")
 	private List<Deportista> deportistas;
 	
 	@JsonIgnore
-	@OneToOne(mappedBy = "equipo")
+	@OneToOne
 	private Entrenador entrenador;
 	
 	@JsonIgnore

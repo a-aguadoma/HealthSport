@@ -11,7 +11,7 @@ import org.springframework.web.context.annotation.SessionScope;
 public class Entrenador extends Usuario {
 	
 	
-	@OneToOne
+	@OneToOne(mappedBy = "entrenador")
 	private Equipo equipo;
 	
 	public Entrenador() {}
