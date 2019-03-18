@@ -20,48 +20,48 @@ HealthSport es una aplicación que permite a los componentes de un equipo deport
 ### INDEX
 Pagina principal desde la que se presenta la aplicación y en la que encontramos los enlaces a las paginas principales.
 
-![Index](https://github.com/a-aguadoma/HealthSport/blob/master/Imagenes/Index.jpeg)
+![Index](https://github.com/a-aguadoma/HealthSport/blob/master/Imagenes/Index.jpg)
 
 ### LOGIN
 Página de inicio de sesion, en la cual iniciaran sesion tanto los deportistas como los entrenadores.
 
-![Login](https://github.com/a-aguadoma/HealthSport/blob/master/Imagenes/Login.jpeg)
+![Login](https://github.com/a-aguadoma/HealthSport/blob/master/Imagenes/Login.jpg)
 
 ### REGISTRO GENERAL
 Página de registro en la cual los usuarios seleccionan si querran registrarse como deportistas o como entrenadores.
 
-![RegistroGeneral](https://github.com/a-aguadoma/HealthSport/blob/master/Imagenes/RegistroGeneral.jpeg)
+![RegistroGeneral](https://github.com/a-aguadoma/HealthSport/blob/master/Imagenes/RegistroGeneral.jpg)
 
 ### REGISTRO DEPORTISTA
 Página de registro en la cual los deportistas rellenan sus datos, obtienen sus credenciales y son registrados en la Base de Datos.
 
-![RegistroDeportista](https://github.com/a-aguadoma/HealthSport/blob/master/Imagenes/RegistroDeportista.jpeg)
+![RegistroDeportista](https://github.com/a-aguadoma/HealthSport/blob/master/Imagenes/RegistroDeportista.jpg)
 
 ### REGISTRO ENTRENADOR
 Página de registro en la cual los entrenadores rellenan sus datos y los del equipo que quieren formar, obtienen sus credenciales y son registrados en la Base de Datos.
 
-![RegistroEntrenador](https://github.com/a-aguadoma/HealthSport/blob/master/Imagenes/RegistroEntrenador.jpeg)
+![RegistroEntrenador](https://github.com/a-aguadoma/HealthSport/blob/master/Imagenes/RegistroEntrenador.jpg)
 
 ### DEPORTISTA
 Página donde el deportista puede consultar sus datos y sus ultimas estadisticas.
 
-![Deportista](https://github.com/a-aguadoma/HealthSport/blob/master/Imagenes/Deportista.jpeg)
+![Deportista](https://github.com/a-aguadoma/HealthSport/blob/master/Imagenes/Deportista.jpg)
 
 ### ENTRENADOR
 Página donde el entrenador podra consultar sus datos y registrar a su equipo en nuevos eventos.
 
-![Entrenador](https://github.com/a-aguadoma/HealthSport/blob/master/Imagenes/Entrenador.jpeg)
+![Entrenador](https://github.com/a-aguadoma/HealthSport/blob/master/Imagenes/Entrenador.jpg)
 
 ### EQUIPO
 Página donde tanto el deportista como el entrenador pueden consultar los datos del equipo al que pertenecen. El entrenador, además, puede añadir nuevos componentes a su equipo.
 
 ![EquipoEntrenador](https://github.com/a-aguadoma/HealthSport/blob/master/Imagenes/EquipoEntrenador.jpeg)
 
-![Deportista](https://github.com/a-aguadoma/HealthSport/blob/master/Imagenes/Deportista.jpeg)
+![Deportista](https://github.com/a-aguadoma/HealthSport/blob/master/Imagenes/Deportista.jpg)
 ### QUIENES SOMOS
 Página donde se presenta al equipo de HealthSport.
 
-![QuienesSomos](https://github.com/a-aguadoma/HealthSport/blob/master/Imagenes/QuienesSomos.jpeg)
+![QuienesSomos](https://github.com/a-aguadoma/HealthSport/blob/master/Imagenes/QuienesSomos.jpg)
 
 
 ## INSTRUCCIONES PARA DESPLEGAR LA APLICACIÓN:
