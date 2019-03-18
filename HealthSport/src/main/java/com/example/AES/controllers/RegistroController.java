@@ -39,55 +39,65 @@ public class RegistroController  /*implements CommandLineRunner */{
 	
 	@Autowired
 	private EquipoRepository equipoRepository;
-	
 
 	@PostMapping(value="/nuevoDeportista")	
 	public String registroDeportista(@RequestParam String nombre,@RequestParam String email, @RequestParam String pass){   
 		
-		//Registro del deportista
-		Deportista nuevoDeportista = new Deportista (nombre, email, pass, equipoRepository.findByNombre("sinEquipo"), null, "ROLE_DEPORTISTA");
-		usuarioRepository.save(nuevoDeportista);
+		equipoRepository.save(new Equipo("aprende", "programar", null, null, null, null));
+		
+		if(usuarioRepository.findByEmail(email) == null) {
+			//Registro del deportista
+				Deportista nuevoDeportista = new Deportista (nombre, email, pass, equipoRepository.findByNombre("aprende"), null, "ROLE_DEPORTISTA");
+				usuarioRepository.save(nuevoDeportista);
 			
-		//Envio de correo mediante servicio interno
-		 String url= "http://localhost:8080/correo/" + nombre + "/" + email + "/" + "deportista";
-		 RestTemplate rest = new RestTemplate(); 
-		 rest.getForObject(url, String.class);
-		 System.out.println("Datos enviados! " + nombre + " " + email);
+			
+			 //Envio de correo mediante servicio interno
+			 String url= "http://localhost:8080/correo/" + nombre + "/" + email + "/" + "deportista";
+			 RestTemplate rest = new RestTemplate(); 
+			 rest.getForObject(url, String.class);
+			 System.out.println("Datos enviados! " + nombre + " " + email);
 		 
-		return("deportista?em="+ email);				
+				return("login");		
+		
+		}
+		
+		else {
+		
+			return("registroDeportista");
+		
+		}
 	}
+		
 	
 	@PostMapping(value="/nuevoEntrenador")
 	public String registroEntrenador(@RequestParam String nombre,@RequestParam String email, @RequestParam String pass, @RequestParam String nombreEquipo, @RequestParam String deporte) {
 		
-		//Registro del equipo
-		Equipo equipo = new Equipo(nombreEquipo, deporte, null, null, null, null);
-		equipoRepository.save(equipo);
+		if(usuarioRepository.findByEmail(email) == null) {
+			
+			//Registro del equipo
+			Equipo equipo = new Equipo(nombreEquipo, deporte, null, null, null, null);
+			equipoRepository.save(equipo);
+			
+			//Registro del entrenador
+			Entrenador nuevoEntrenador = new Entrenador(nombre, pass, email, equipoRepository.findByNombre(nombreEquipo), "ROLE_ENTRENADOR");
+			usuarioRepository.save(nuevoEntrenador);	
+			
+			//Envio de correo mediante servicio interno
+			 String url= "http://localhost:8080/correo/" + nombre + "/" + email + "/" + "entrenador";
+			 RestTemplate rest = new RestTemplate(); 
+			 rest.getForObject(url, String.class);
+			 System.out.println("Datos enviados! " + nombre + " " + email);
+			
+			return("login");
 		
-		//Registro del entrenador
-		Entrenador nuevoEntrenador = new Entrenador(nombre, pass, email, equipoRepository.findByNombre(nombreEquipo), "ROLE_ENTRENADOR");
-		usuarioRepository.save(nuevoEntrenador);	
-		
-		//Envio de correo mediante servicio interno
-		 String url= "http://localhost:8080/correo/" + nombre + "/" + email + "/" + "entrenador";
-		 RestTemplate rest = new RestTemplate(); 
-		 rest.getForObject(url, String.class);
-		 System.out.println("Datos enviados! " + nombre + " " + email);
-		
-		return("entrenador?em="+ email);
+		} else {
+			
+			return("registroEntrenador");
+			
+			}
 	}
 	
-/*	public void run(String... args) throws Exception {
-		
-		equipoRepository.save(new Equipo("invencibles", "baloncesto", "clave", null,  null, null));
-		equipoRepository.save(new Equipo("sinEquipo", null , null, null,  null, null));
 
-		usuarioRepository.save(new Entrenador("Antonio", "pass", "antonio@urjc.es", equipoRepository.findByClave("clave"), "ENTRENADOR"));
-
-		usuarioRepository.save(new Deportista("Paco", "paco@urjc.es", "pass", equipoRepository.findByNombre("sinEquipo"), null, "DEPORTISTA"));
-		usuarioRepository.save(new Deportista("Chloe", "chloe@urjc.es", "pass", equipoRepository.findByNombre("sinEquipo"), null, "DEPORTISTA"));
-		 
-		 }*/
 	
 	@RequestMapping("/registroDeportista")
 	public String registroDeportista(Model model) {
