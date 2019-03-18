@@ -70,7 +70,7 @@ public class LoginController {
 			return ("redirect:/deportista");
 		
 		} else {
-			return ("redirect:/home");
+			return ("redirect:/index");
 		}	
 	}
 }

@@ -22,14 +22,10 @@ public class HealthSportApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(HealthSportApplication.class, args);
 	}
-	
-
-	
-	
-	/*@RequestMapping("/index")
+	@RequestMapping("/calendario")
 	public String greeting(Model model) {
-		return "index";
-	}*/
+		return "calendario";
+	}
 
 	@RequestMapping("/quienessomos")
 	public String quienessomos(Model model) {
@@ -40,9 +36,6 @@ public class HealthSportApplication {
 	public String registroGeneral(Model model) {
 		return "registroGeneral";
 	}
-	@GetMapping("/home")
-	 public String home(Model model) {
-	 return "home";
-	 }
+
 }
 
