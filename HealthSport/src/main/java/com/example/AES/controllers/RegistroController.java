@@ -1,10 +1,5 @@
 package com.example.AES.controllers;
 
-
-
-import javax.servlet.http.HttpServletRequest;
-
-
 import com.example.AES.repositories.*;
 
 import com.example.AES.models.*;
@@ -26,9 +21,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.servlet.ModelAndView;
-import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
-import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
+
 
 
 @Controller
@@ -49,13 +42,16 @@ public class RegistroController  /*implements CommandLineRunner */{
 				Deportista nuevoDeportista = new Deportista (nombre, email, pass, equipoRepository.findByNombre("sinEquipo"), null, "ROLE_DEPORTISTA");
 				usuarioRepository.save(nuevoDeportista);
 			
-			
-			 //Envio de correo mediante servicio interno
-			 String url= "http://localhost:8080/correo/" + nombre + "/" + email + "/" + "deportista";
-			 RestTemplate rest = new RestTemplate(); 
-			 rest.getForObject(url, String.class);
-			 System.out.println("Datos enviados! " + nombre + " " + email);
-		 
+				//Envio de correo mediante servicio interno
+				
+				//Creacion del objeto mensaje para enviarlo al servicio interno
+				Mensaje user= new Mensaje(nombre, email, "ROLE_DEPORTISTA");
+				
+				String url= "http://localhost:8080/correo/";
+				RestTemplate rest = new RestTemplate(); 
+				rest.postForObject(url, user, Mensaje.class);
+				System.out.println("Datos enviados! " + nombre + " " + email);
+				
 				return("login");		
 		
 		}
@@ -83,9 +79,13 @@ public class RegistroController  /*implements CommandLineRunner */{
 			equipoRepository.save(equipo);
 			
 			//Envio de correo mediante servicio interno
-			 String url= "http://localhost:8080/correo/" + nombre + "/" + email + "/" + "entrenador";
+			
+			//Creacion del objeto mensaje para enviarlo al servicio interno
+			Mensaje user= new Mensaje(nombre, email, "ROLE_ENTRENADOR");
+			
+			 String url= "http://localhost:8080/correo/";
 			 RestTemplate rest = new RestTemplate(); 
-			 rest.getForObject(url, Usuario.class);
+			 rest.postForObject(url, user, Mensaje.class);
 			 System.out.println("Datos enviados! " + nombre + " " + email);
 			
 			return("login");

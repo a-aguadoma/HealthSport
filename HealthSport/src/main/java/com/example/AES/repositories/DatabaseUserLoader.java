@@ -30,9 +30,10 @@ public class DatabaseUserLoader {
 		equipoRepository.save(new Equipo("sinEquipo", "todos" , null, null, null, null));
 		
 		//Deportistas sin equipo
-		userRepository.save(new Deportista("Diana", "diana@ejemplo.com", "pass", equipoRepository.findByNombre("sinEquipo"),null, "ROLE_USER"));
 		
-		userRepository.save(new Deportista("Dolores", "dolores@ejemplo.com", "pass", equipoRepository.findByNombre("sinEquipo"), null,"ROLE_USER"));
+		userRepository.save(new Deportista("Diana", "diana@ejemplo.com", "pass", equipoRepository.findByNombre("sinEquipo"),null, "ROLE_DEPORTISTA"));
+		
+		userRepository.save(new Deportista("Dolores", "dolores@ejemplo.com", "pass", equipoRepository.findByNombre("sinEquipo"), null,"ROLE_DEPORTISTA"));
 		
 		
 		//Entrenadores
@@ -44,8 +45,8 @@ public class DatabaseUserLoader {
 		
 		
 		//Deportistas con equipo
-		userRepository.save(new Deportista("Damian", "damian@ejemplo.com", "pass", equipoRepository.findByNombre("Stark"),null, "ROLE_USER"));
-		userRepository.save(new Deportista("Dan", "dan@ejemplo.com", "pass", equipoRepository.findByNombre("Stark"),null, "ROLE_USER"));
+		userRepository.save(new Deportista("Damian", "damian@ejemplo.com", "pass", equipoRepository.findByNombre("Stark"),null, "ROLE_DEPORTISTA"));
+		userRepository.save(new Deportista("Dan", "dan@ejemplo.com", "pass", equipoRepository.findByNombre("Stark"),null, "ROLE_DEPORTISTA"));
 		
 		
 		//Eventos
