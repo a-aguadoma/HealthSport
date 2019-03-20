@@ -85,7 +85,7 @@ public class RegistroController  /*implements CommandLineRunner */{
 			//Envio de correo mediante servicio interno
 			 String url= "http://localhost:8080/correo/" + nombre + "/" + email + "/" + "entrenador";
 			 RestTemplate rest = new RestTemplate(); 
-			 rest.getForObject(url, String.class);
+			 rest.getForObject(url, Usuario.class);
 			 System.out.println("Datos enviados! " + nombre + " " + email);
 			
 			return("login");

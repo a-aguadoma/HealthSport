@@ -30,10 +30,7 @@ public class EquipoController {
 		
 			Deportista deportista = (com.example.AES.models.Deportista) usuarioRepository.findByEmail(request.getUserPrincipal().getName());	
 		    Equipo eq=deportista.getEquipo();
-			//Equipo eq = equipoRepository.findByNombre("aprende");
-			//Equipo equipo = (com.example.AES.models.Equipo) equipoRepository.findByNombre("aprende");
-
-			//Equipo equipo = (Equipo) equipoRepository.findByNombre(eq);
+		
 			
 			//Si el deportista NO tiene equipo, muestra la tabla vacia
 			if(eq.getNombre().equals("sinEquipo")){
@@ -74,7 +71,6 @@ public class EquipoController {
 	public String EquipoEntrenador (Model model, HttpServletRequest request) {
 		
 		
-			System.out.println("Entra");
 			Entrenador entrenador = (com.example.AES.models.Entrenador) usuarioRepository.findByEmail(request.getUserPrincipal().getName());	
 			Equipo equipo=entrenador.getEquipo();
 			
@@ -121,22 +117,25 @@ public class EquipoController {
 	@RequestMapping("/añadirDeportista")
 	public void AñadirDeportista (Model model, @RequestParam String dep, HttpServletRequest request, HttpServletResponse response) {
 		
+			if (!dep.equals("-")) {
 		
-			Entrenador entrenador = (com.example.AES.models.Entrenador) usuarioRepository.findByEmail(request.getUserPrincipal().getName());	
-			Equipo equipo=entrenador.getEquipo();
-		
-			Deportista deportista = (Deportista) usuarioRepository.findByNombre(dep);
-			deportista.setEquipo(equipo);
+				Entrenador entrenador = (com.example.AES.models.Entrenador) usuarioRepository.findByEmail(request.getUserPrincipal().getName());	
+				Equipo equipo=entrenador.getEquipo();
 			
-			usuarioRepository.save(deportista);
+				Deportista deportista = (Deportista) usuarioRepository.findByNombre(dep);
+				deportista.setEquipo(equipo);
+				
+				usuarioRepository.save(deportista);
 			
-	
+			}
+			
 			try {
 				response.sendRedirect("/equipoEntrenador");
 			} catch (IOException e) {
 				
 				
 			}
+			
 		
 	}
 

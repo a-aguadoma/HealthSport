@@ -8,41 +8,49 @@ import org.springframework.stereotype.Component;
 import com.example.AES.models.Deportista;
 import com.example.AES.models.Entrenador;
 import com.example.AES.models.Equipo;
-import com.example.AES.models.Usuario;
+import com.example.AES.models.Evento;
 import com.example.AES.repositories.UsuarioRepository;
 
 @Component
 public class DatabaseUserLoader {
 	
 	@Autowired
-	 private EquipoRepository er;
+	private EquipoRepository equipoRepository;
 	
-	 @Autowired
-	 private UsuarioRepository userRepository;
-	 @PostConstruct
-	 private void initDatabase() {
-
+	@Autowired
+	private UsuarioRepository userRepository;
+	
+	@Autowired
+	private EventoRepository eventoRepository;
 	 
-	er.save(new Equipo("sinEquipo", "todos" , null, null, null, null));
-	//er.save(new Equipo("aprende", "programar", null, null, null, null));
-	
-	userRepository.save(
-	 new Usuario("s", "s@urjc.com", "pass", "equipochachi", "ROLE_USER"));
-	
-	userRepository.save(
-			 new Entrenador("eeeee", "e@urjc.com", "pass", null , "ROLE_ENTRENADOR"));
-			
-	
-	userRepository.save(
-			 new Deportista("duran", "d@urjc.com", "pass", er.findByNombre("sinEquipo"), null , "ROLE_DEPORTISTA"));
-	
-	er.save(new Equipo("aprende", "programar", null, null, (Entrenador)userRepository.findByEmail("e@urjc.com"), null));
-	
-	//System.out.println(er.findByDeportistas("duran"));
-	
-	 userRepository.save(
-	 new Usuario("a","a","entrenador"));
+	 
+	@PostConstruct
+	private void initDatabase() {
+
+		equipoRepository.save(new Equipo("sinEquipo", "todos" , null, null, null, null));
+		
+		//Deportistas sin equipo
+		userRepository.save(new Deportista("Diana", "diana@ejemplo.com", "pass", equipoRepository.findByNombre("sinEquipo"),null, "ROLE_USER"));
+		
+		userRepository.save(new Deportista("Dolores", "dolores@ejemplo.com", "pass", equipoRepository.findByNombre("sinEquipo"), null,"ROLE_USER"));
+		
+		
+		//Entrenadores
+		userRepository.save(new Entrenador("Enrique", "enrique@ejemplo.com", "pass", null , "ROLE_ENTRENADOR"));
+				
+		
+		//Equipos
+		equipoRepository.save(new Equipo("Stark", "Atletismo", null, null, (Entrenador)userRepository.findByEmail("enrique@ejemplo.com"), null));
+		
+		
+		//Deportistas con equipo
+		userRepository.save(new Deportista("Damian", "damian@ejemplo.com", "pass", equipoRepository.findByNombre("Stark"),null, "ROLE_USER"));
+		userRepository.save(new Deportista("Dan", "dan@ejemplo.com", "pass", equipoRepository.findByNombre("Stark"),null, "ROLE_USER"));
+		
+		
+		//Eventos
+		eventoRepository.save(new Evento("San Silvestre", "Atletismo", "Carrera Popular", "31/12/2018", "Vallecas", equipoRepository.findByNombre("Stark")));
+		eventoRepository.save(new Evento("Iron Man Segovia", "Triatlon", "Iron Man", "3/3/2019", "Segovia", equipoRepository.findByNombre("Stark")));
 	 }
-	
 	
 }

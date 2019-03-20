@@ -23,13 +23,13 @@ public class UsuarioRepositoryAuthProvider implements AuthenticationProvider{
 
 	@Autowired
 	private UsuarioRepository userRepository;
+	
+	
 	@Override
 	public Authentication authenticate(Authentication auth) throws AuthenticationException {
-		
-		//Usuario user = userRepository.findByNombre(auth.getName());
+	
 		
 		String email = auth.getName(); //getEmail
-		String passwordHash = (String) auth.getCredentials();
 
 		Usuario user = userRepository.findByEmail(email);
 	 

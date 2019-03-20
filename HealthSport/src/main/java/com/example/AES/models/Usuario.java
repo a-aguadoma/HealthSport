@@ -23,7 +23,6 @@ public class Usuario {
 	private String nombre;
 	private String email; 
 	private String passwordHash;
-	//private String rol;
 	
 	@ElementCollection(fetch = FetchType.EAGER)
 	private List<String> roles;
@@ -38,7 +37,7 @@ public class Usuario {
 		this.email = email;
 		this.passwordHash = new BCryptPasswordEncoder().encode(passwordHash); 
 		this.roles = new ArrayList<>(Arrays.asList(roles));
-		//this.rol = rol;
+		
 	}
 	
 
