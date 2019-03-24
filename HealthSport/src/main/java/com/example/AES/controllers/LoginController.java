@@ -51,10 +51,10 @@ public class LoginController {
 	 return "login";
 	}
 	
-	@GetMapping("/logout")
+	/*@GetMapping("/logOut")
 	 public String logout(Model model) {
-	 return "index";
-	 }
+	 return "login";
+	 }*/
 	
 	@RequestMapping("/perfil")
 	public String redireccion(Model model,HttpServletRequest request) {

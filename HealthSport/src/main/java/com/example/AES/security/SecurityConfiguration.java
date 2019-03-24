@@ -23,6 +23,8 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 		http.authorizeRequests().antMatchers("/registroGeneral").permitAll();
 		http.authorizeRequests().antMatchers("/registroEntrenador").permitAll();
 		http.authorizeRequests().antMatchers("/registroDeportista").permitAll();
+		//http.authorizeRequests().antMatchers("/logout").permitAll();
+
 		
 
 		// PAGINAS PRIVADAS
@@ -40,7 +42,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 		http.formLogin().failureUrl("/loginerror");
 		// Logout
 		http.logout().logoutUrl("/logout");
-		http.logout().logoutSuccessUrl("/");
+		http.logout().logoutSuccessUrl("/login");
 
 		// Disable CSRF at the moment
 		// http.csrf().disable();
