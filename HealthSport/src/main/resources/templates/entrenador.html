@@ -57,6 +57,11 @@
 			</header>
 <!--==============================Content=================================-->
 
+			<form method="post" action="/logout">  
+           		<input type="hidden" name="_csrf" value={{token}}>   
+				<input type="submit" value="Logout" />			
+  			</form>
+
 			<!--  Datos Entrenador -->   
 			<div class="container_12" >
 		        <h2>{{nombreEntrenador}}</h2>

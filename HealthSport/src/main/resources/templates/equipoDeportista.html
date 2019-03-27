@@ -54,6 +54,11 @@
 				</div>
 			</header>
 <!--==============================Content=================================-->
+
+			<form method="post" action="/logout">  
+           		<input type="hidden" name="_csrf" value={{token}}>   
+				<input type="submit" value="Logout" />			
+  			</form>
                  
             
 			<!--  Datos Equipo -->   
