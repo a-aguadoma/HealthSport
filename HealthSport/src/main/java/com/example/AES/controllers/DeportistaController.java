@@ -49,7 +49,7 @@ public class DeportistaController {
 			}
 			//model.addAttribute("Registrado como", "Deportista");	
 			
-			/*List<Evento> listaEventos = deportista.getEquipo().getEventos();
+			//List<Evento> listaEventos = deportista.getEquipo().getEventos();
 			
 			for(int i = 1; i <= listaEventos.size(); i++) {
 				Estadisticas estadisticas = new Estadisticas(listaEventos.get(i-1), deportista);
@@ -67,9 +67,9 @@ public class DeportistaController {
 				model.addAttribute("Velocidad"+i, estadisticas.getVelocidad());
 				model.addAttribute("Evento"+i, estadisticas.getEvento());
 				System.out.println("guardo estadistica");*/
-			//}
+			}
 			
-			for(int i = 0+1; i <= 6; i++) {
+			for(int i = lE+1; i <= 6; i++) {
 				model.addAttribute("nombreEvento"+i, "-");
 				model.addAttribute("tipoEvento"+i, "-");
 				model.addAttribute("LPM"+i, "-");
