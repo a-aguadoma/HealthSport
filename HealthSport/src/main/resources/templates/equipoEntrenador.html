@@ -44,7 +44,12 @@
 								<ul class="sf-menu">
 									<li><a href="/entrenador">Apuntarse a Evento</a></li>
 									<li class="current"><a href="/equipoEntrenador">Datos Equipo</a></li>
-									<input type="hidden" name="_csrf" value={{token}}>			
+									<input type="hidden" name="_csrf" value={{token}}>	
+									<li> <form method="post" action="/logout">  
+						           		<input type="hidden" name="_csrf" value={{token}}>   
+										<input type="submit" value="Abandonar Sesión" class="enlace" />	
+									</form>
+						  			</li>			
 								</ul>
 							</nav>
 							<div class="clear"></div>
@@ -54,11 +59,6 @@
 				</div>
 			</header>
 <!--==============================Content=================================-->
-
-			<form method="post" action="/logout">  
-           		<input type="hidden" name="_csrf" value={{token}}>   
-				<input type="submit" value="Logout" />			
-  			</form>
                  
             
 			<!--  Datos Equipo -->   

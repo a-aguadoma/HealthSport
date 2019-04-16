@@ -45,7 +45,11 @@
 									<li class="current"><a href="/entrenador">Apuntarse a Evento</a></li>
 
 									<li><a href="/equipoEntrenador">Datos Equipo</a></li>
-											
+									<li> <form method="post" action="/logout">  
+						           		<input type="hidden" name="_csrf" value={{token}}>   
+										<input type="submit" value="Abandonar Sesión" class="enlace" />	
+									</form>
+						  			</li>			
 
 								</ul>
 							</nav>
@@ -56,11 +60,6 @@
 				</div>
 			</header>
 <!--==============================Content=================================-->
-
-			<form method="post" action="/logout">  
-           		<input type="hidden" name="_csrf" value={{token}}>   
-				<input type="submit" value="Logout" />			
-  			</form>
 
 			<!--  Datos Entrenador -->   
 			<div class="container_12" >
