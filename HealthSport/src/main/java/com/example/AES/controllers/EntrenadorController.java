@@ -19,9 +19,13 @@ public class EntrenadorController {
 	@Autowired
 	UsuarioRepository usuarioRepository;
 	
+	/*@Autowired
+	EquipoRepository equipoRepository;*/
+	
 	@RequestMapping("/entrenador")
 	public String Entrenador (Model model, HttpServletRequest request) {
-		
+			
+			//equipoRepository.save(new Equipo("sinEquipo", "todos" , null, null, null, null));
 			Entrenador entrenador = (Entrenador) usuarioRepository.findByEmail(request.getUserPrincipal().getName());
 			model.addAttribute("nombreEntrenador", entrenador.getNombre());		
 			model.addAttribute("equipoEntrenador", entrenador.getEquipo().getNombre());

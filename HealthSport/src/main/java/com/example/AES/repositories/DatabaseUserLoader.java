@@ -1,4 +1,6 @@
-package com.example.AES.repositories;
+
+ package com.example.AES.repositories;
+
 
 import javax.annotation.PostConstruct;
 
@@ -28,7 +30,7 @@ public class DatabaseUserLoader {
 	private void initDatabase() {
 
 		equipoRepository.save(new Equipo("sinEquipo", "todos" , null, null, null, null));
-		
+		/*
 		//Deportistas sin equipo
 		
 		userRepository.save(new Deportista("Diana", "diana@ejemplo.com", "pass", equipoRepository.findByNombre("sinEquipo"),null, "ROLE_DEPORTISTA"));
@@ -52,6 +54,8 @@ public class DatabaseUserLoader {
 		//Eventos
 		eventoRepository.save(new Evento("San Silvestre", "Atletismo", "Carrera Popular", "31/12/2018", "Vallecas", equipoRepository.findByNombre("Stark")));
 		eventoRepository.save(new Evento("Iron Man Segovia", "Triatlon", "Iron Man", "3/3/2019", "Segovia", equipoRepository.findByNombre("Stark")));
+	 */
 	 }
+	 
 	
 }

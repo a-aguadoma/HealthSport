@@ -108,7 +108,10 @@ public class RegistroController  /*implements CommandLineRunner */{
 		return "registroEntrenador";
 	}
 	
-	
+	@RequestMapping("/registroGeneral")
+	public String registroGeneral(Model model) {
+		return "registroGeneral";
+	}
 }
 
 

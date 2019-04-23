@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.springframework.cache.annotation.CacheConfig;
 import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.CachePut;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.data.jpa.repository.JpaRepository;
 
@@ -15,7 +16,7 @@ public interface UsuarioRepository extends JpaRepository<Usuario, Long> {
 	
 	
 	@SuppressWarnings("unchecked")
-	@CacheEvict(allEntries = true)
+	@CacheEvict	(allEntries = true)
 	Usuario save(Usuario user);
 	
 	//@Cacheable
@@ -24,12 +25,10 @@ public interface UsuarioRepository extends JpaRepository<Usuario, Long> {
 	@Cacheable
 	Usuario findByNombre(String nombre);
 	
-	@Cacheable
+	//@Cacheable
 	Usuario findByEmailAndPasswordHash(String email,String passwordHash);
 	
-	@Cacheable
+	//@Cacheable
 	List<Usuario> findByRolesIn(String roles);
 	
-	
-
 }

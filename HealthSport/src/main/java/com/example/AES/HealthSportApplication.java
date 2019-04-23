@@ -1,5 +1,7 @@
 package com.example.AES;
 
+import java.util.Collections;
+
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.boot.SpringApplication;
@@ -18,34 +20,42 @@ import javax.servlet.http.HttpServletRequest;
 import org.springframework.security.web.csrf.CsrfToken;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.session.hazelcast.config.annotation.web.http.EnableHazelcastHttpSession;
 
+import com.hazelcast.config.Config;
+import com.hazelcast.config.JoinConfig;
 @Controller
 @EnableCaching
+@EnableHazelcastHttpSession
 @SpringBootApplication
 public class HealthSportApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(HealthSportApplication.class, args);
 	}
-	@RequestMapping("/calendario")
-	public String greeting(Model model) {
-		return "calendario";
-	}
-
-	@RequestMapping("/quienessomos")
-	public String quienessomos(Model model) {
-		return "quienessomos";
-	}
 	
-	@RequestMapping("/registroGeneral")
-	public String registroGeneral(Model model) {
-		return "registroGeneral";
+	@Bean
+	public Config config() {
+		Config config = new Config();
+		JoinConfig joinConfig = config.getNetworkConfig().getJoin();
+		joinConfig.getMulticastConfig().setEnabled(false); 
+		joinConfig.getTcpIpConfig().setEnabled(true).setMembers(Collections.singletonList("127.0.0.1"));
+		//Ips de servidores Web colocadas en Hazelcast
+		//joinConfig.getTcpIpConfig().addMember("192.168.33.11").addMember("192.168.33.10").setEnabled(true);
+		return config; 
 	}
 	
 	@Bean
     public CacheManager cacheManager() {
     		return new ConcurrentMapCacheManager("HealthSport");
     }
+	
+	
 
+	@RequestMapping("/quienessomos")
+	public String quienessomos(Model model) {
+		return "quienessomos";
+	}
+	
 }
 

@@ -23,12 +23,16 @@ public class DeportistaController {
 	
 	@Autowired
 	UsuarioRepository usuarioRepository;
+	
+	/*@Autowired
+	EquipoRepository equipoRepository;*/
 
 	@RequestMapping("/deportista")
 	public String Deportista (Model model, HttpServletRequest request) {
+			//equipoRepository.save(new Equipo("sinEquipo", "todos" , null, null, null, null));
 		
 			Deportista deportista = (com.example.AES.models.Deportista) usuarioRepository.findByEmail(request.getUserPrincipal().getName());
-
+			
 			//Deportista deportista = (Deportista) usuarioRepository.findByEmail(em);
 			model.addAttribute("nombreDeportista", deportista.getNombre());			
 			model.addAttribute("equipoDeportista", deportista.getEquipo().getNombre());

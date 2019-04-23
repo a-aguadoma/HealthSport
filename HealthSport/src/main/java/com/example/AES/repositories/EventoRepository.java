@@ -13,7 +13,19 @@ import org.springframework.cache.annotation.Cacheable;
 public interface EventoRepository extends JpaRepository<Evento, Long> {
 	
 	@SuppressWarnings("unchecked")
-	@CacheEvict(allEntries = true)
+	@CacheEvict	(allEntries = true)
 	Evento save(Evento evento);
+	
+	@Cacheable
+	Evento findByNombre(String nombre);
+	
+	@Cacheable
+	Evento findByDeporte(String deporte);
+	
+	@Cacheable
+	Evento findByFecha(String fecha);
+	
+	@Cacheable
+	Evento findByLugar(String lugar);
 
 }
