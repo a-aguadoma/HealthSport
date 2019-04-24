@@ -16,19 +16,19 @@ public interface UsuarioRepository extends JpaRepository<Usuario, Long> {
 	
 	
 	@SuppressWarnings("unchecked")
-	@CacheEvict	(allEntries = true)
+	@CacheEvict
 	Usuario save(Usuario user);
 	
-	//@Cacheable
+	@CachePut
 	Usuario findByEmail(String email);
 	
-	@Cacheable
+	//@Cacheable
 	Usuario findByNombre(String nombre);
 	
-	//@Cacheable
+
 	Usuario findByEmailAndPasswordHash(String email,String passwordHash);
 	
-	//@Cacheable
+
 	List<Usuario> findByRolesIn(String roles);
 	
 }

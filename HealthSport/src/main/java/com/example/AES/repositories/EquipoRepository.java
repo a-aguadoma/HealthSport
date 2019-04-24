@@ -19,13 +19,13 @@ public interface EquipoRepository extends JpaRepository<Equipo, Long>{
 	@CachePut
 	Equipo save(Equipo equipo);
 	
-	@Cacheable
+	//@Cacheable
 	Equipo findByNombre(String nombre);
 	
-	@Cacheable
+	//@Cacheable
 	Equipo findByClave(String claveEquipo);
 	
-	@Cacheable
+	//@Cacheable
 	List<Deportista> findByDeportistas(String nombre);
 
 }

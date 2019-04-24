@@ -36,6 +36,11 @@ public class RegistroController  /*implements CommandLineRunner */{
 	@PostMapping(value="/nuevoDeportista")	
 	public String registroDeportista(@RequestParam String nombre,@RequestParam String email, @RequestParam String pass){   
 		
+		//Creacion del equipo vacio
+		if(equipoRepository.findByNombre("sinEquipo")== null){
+			
+			equipoRepository.save(new Equipo("sinEquipo", "todos" , null, null, null, null));
+		}
 		
 		if(usuarioRepository.findByEmail(email) == null) {
 			//Registro del deportista
@@ -47,9 +52,9 @@ public class RegistroController  /*implements CommandLineRunner */{
 				//Creacion del objeto mensaje para enviarlo al servicio interno
 				Mensaje user= new Mensaje(nombre, email, "ROLE_DEPORTISTA");
 				
-				String url= "http://localhost:8080/correo/";
-				RestTemplate rest = new RestTemplate(); 
-				rest.postForObject(url, user, Mensaje.class);
+				String url= "http://172.20.0.7:7000/correo/";
+				//RestTemplate rest = new RestTemplate(); 
+				//rest.postForObject(url, user, Mensaje.class);
 				System.out.println("Datos enviados! " + nombre + " " + email);
 				
 				return("login");		
@@ -83,9 +88,9 @@ public class RegistroController  /*implements CommandLineRunner */{
 			//Creacion del objeto mensaje para enviarlo al servicio interno
 			Mensaje user= new Mensaje(nombre, email, "ROLE_ENTRENADOR");
 			
-			 String url= "http://localhost:8080/correo/";
-			 RestTemplate rest = new RestTemplate(); 
-			 rest.postForObject(url, user, Mensaje.class);
+			 String url= "http://172.20.0.7:7000/correo/";
+			 //RestTemplate rest = new RestTemplate(); 
+			 //rest.postForObject(url, user, Mensaje.class);
 			 System.out.println("Datos enviados! " + nombre + " " + email);
 			
 			return("login");
