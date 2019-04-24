@@ -14,21 +14,21 @@ import com.example.AES.models.*;
 @CacheConfig(cacheNames="HealthSport")
 public interface UsuarioRepository extends JpaRepository<Usuario, Long> {
 	
-	
+	 
 	@SuppressWarnings("unchecked")
-	@CacheEvict
+	@CacheEvict	(allEntries = true)
 	Usuario save(Usuario user);
 	
 	@CachePut
 	Usuario findByEmail(String email);
 	
-	//@Cacheable
+	@Cacheable
 	Usuario findByNombre(String nombre);
 	
-
+	@CacheEvict
 	Usuario findByEmailAndPasswordHash(String email,String passwordHash);
 	
-
+	@Cacheable
 	List<Usuario> findByRolesIn(String roles);
 	
 }

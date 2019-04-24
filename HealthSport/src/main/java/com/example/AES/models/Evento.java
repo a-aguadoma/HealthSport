@@ -22,7 +22,7 @@ public class Evento {
 	private String fecha;
 	private String lugar;
 	
-	@JsonIgnore
+	//@JsonIgnore
 	@ManyToOne
 	private Equipo equipo ;
 	

@@ -7,6 +7,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 public class Estadisticas {
 	
@@ -18,10 +20,10 @@ public class Estadisticas {
 	private float distancia;
 	private float tiempo;
 	private float velocidad;
-	
+	@JsonIgnore
 	@ManyToOne
 	private Evento evento;
-	
+	@JsonIgnore
 	@ManyToOne
 	private Deportista deportista;
 	

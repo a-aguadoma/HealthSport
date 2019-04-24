@@ -15,17 +15,16 @@ import com.example.AES.models.*;
 public interface EquipoRepository extends JpaRepository<Equipo, Long>{
 	
 	
-	@SuppressWarnings("unchecked")
 	@CachePut
 	Equipo save(Equipo equipo);
 	
-	//@Cacheable
+	@CacheEvict
 	Equipo findByNombre(String nombre);
 	
-	//@Cacheable
+	@Cacheable
 	Equipo findByClave(String claveEquipo);
 	
-	//@Cacheable
+	@Cacheable
 	List<Deportista> findByDeportistas(String nombre);
 
 }

@@ -20,20 +20,20 @@ import javax.servlet.http.HttpServletRequest;
 import org.springframework.security.web.csrf.CsrfToken;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-//import org.springframework.session.hazelcast.config.annotation.web.http.EnableHazelcastHttpSession;
+import org.springframework.session.hazelcast.config.annotation.web.http.EnableHazelcastHttpSession;
 
-/*import com.hazelcast.config.Config;
-import com.hazelcast.config.JoinConfig;*/
+import com.hazelcast.config.Config;
+import com.hazelcast.config.JoinConfig;
 @Controller
 @EnableCaching
-//@EnableHazelcastHttpSession
+@EnableHazelcastHttpSession
 @SpringBootApplication
 public class HealthSportApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(HealthSportApplication.class, args);
 	}
-	/*
+
 	@Bean
 	public Config config() {
 		Config config = new Config();
@@ -44,7 +44,7 @@ public class HealthSportApplication {
 		//joinConfig.getTcpIpConfig().addMember("192.168.33.11").addMember("192.168.33.10").setEnabled(true);
 		return config; 
 	}
-	*/
+
 	@Bean
     public CacheManager cacheManager() {
     		return new ConcurrentMapCacheManager("HealthSport");
