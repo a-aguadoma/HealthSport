@@ -6,13 +6,11 @@ import javax.persistence.*;
 
 import org.springframework.web.context.annotation.SessionScope;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
 @Entity
 @SessionScope
 public class Entrenador extends Usuario {
 	
-	//@JsonIgnore
+	
 	@OneToOne(mappedBy = "entrenador")
 	private Equipo equipo;
 	

@@ -4,18 +4,14 @@ package com.example.AES.models;
 import java.util.List;
 import javax.persistence.*;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
 
 
 @Entity
 public class Deportista extends Usuario{
 	
-	//@JsonIgnore
 	@ManyToOne
 	private Equipo equipo;
 	
-	@JsonIgnore
 	@OneToMany
 	private List<Estadisticas> estadisticas;
 	

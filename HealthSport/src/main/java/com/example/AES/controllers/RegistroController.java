@@ -27,26 +27,14 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 public class RegistroController  /*implements CommandLineRunner */{
 	
-
 	@Autowired
 	private UsuarioRepository usuarioRepository;
 	
 	@Autowired
 	private EquipoRepository equipoRepository;
-	
 
 	@PostMapping(value="/nuevoDeportista")	
 	public String registroDeportista(@RequestParam String nombre,@RequestParam String email, @RequestParam String pass){   
-		
-		
-		
-		  //Creacion del equipo vacio
-		  if(equipoRepository.findByNombre("sinEquipo")==null){
-		  
-		  equipoRepository.save(new Equipo("sinEquipo", "todos" , null, null,
-		  null,null)); }
-		 
-		 
 		
 		
 		if(usuarioRepository.findByEmail(email) == null) {
@@ -79,17 +67,7 @@ public class RegistroController  /*implements CommandLineRunner */{
 	@PostMapping(value="/nuevoEntrenador")
 	public String registroEntrenador(@RequestParam String nombre,@RequestParam String email, @RequestParam String pass, @RequestParam String nombreEquipo, @RequestParam String deporte) {
 		
-		
-		
-		
-		  //Creacion del equipo vacio
-		  if(equipoRepository.findByNombre("sinEquipo")==null){
-		  
-		  equipoRepository.save(new Equipo("sinEquipo", "todos" , null, null,
-		  null,null)); }
-		 
-		  if(usuarioRepository.findByEmail(email) == null) {
-		 
+		if(usuarioRepository.findByEmail(email) == null) {
 			
 			
 			//Registro del entrenador
