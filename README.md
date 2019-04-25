@@ -100,6 +100,28 @@ java -jar HealthSport-0.0.1-SNAPSHOT.jar
 java -jar ServicioInterno-0.0.1-SNAPSHOT.jar --password=****
 
 
+## Intrucciones de dockerización:
+
+### Descarga e instalar Docker:
+
+Sigueindo los paso de la web ofcial: https://docs.docker.com/install/linux/docker-ce/ubuntu/
+
+### Descargar la imagen oficial de Haproxy:
+
+La pagina de a imagen oficial de Haproxy ofrece una guia sobre como descargar e instalar: https://hub.docker.com/_/haproxy
+
+### Dockerizar la aplicación y el servicio interno:
+
+Una vez creados los .jar como se explicaba anteriormente, es necesario hacer un Dockerfile para cada uno de ellos y otro para la base de datos.
+
+### Generar el compose y ejecutarlo:
+
+Descargando el coprimido de HealthSport del repositorio, se deberá emplazar todo el contenido en una carpeta, que contendra el .jar de la aplicación con su Dockerfile, una carpeta con el .jar del servicio interno y su Dockerfile y dos carpetas proxy que contendran los archivos de configuracion .cfg del balanceador y sus respectivos Dockerfiles. La carpeta proxy del balanceador de la apliación contendrá también el certificado para que esta pueda ejecutarse con seguridad mediante HTTPS.
+El docker-compose facilitado se encarga de conectar los distintos contenedores y hacer que se ejecuten controlando la ejecucion en base a las dependencias que tienen entre ellos.
+
+Para levantar este compose que contiene dos instancias de la aplicación, su balanceador, la base de datos, y dos instancias del servicio interno, también con su balanceador se debe utiliza el comando: sudo docker-compose up --build
+
+
 ## Equipo de desarrollo:
 
 #### Alberto Aguado Martínez - a-aguadoma - a.aguadomar@alumnos.urjc.es
