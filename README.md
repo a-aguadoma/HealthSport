@@ -112,14 +112,16 @@ La pagina de a imagen oficial de Haproxy ofrece una guia sobre como descargar e 
 
 ### Dockerizar la aplicación y el servicio interno:
 
-Una vez creados los .jar como se explicaba anteriormente, es necesario hacer un Dockerfile para cada uno de ellos y otro para la base de datos.
+Una vez creados los .jar como se explicaba anteriormente, es necesario hacer un Dockerfile para cada uno de ellos y otro para la base de datos. Pueden servir de ejmplos los archivos descritos en la carpeta Dockerización.
 
 ### Generar el compose y ejecutarlo:
 
-Descargando el coprimido de HealthSport del repositorio, se deberá emplazar todo el contenido en una carpeta, que contendra el .jar de la aplicación con su Dockerfile, una carpeta con el .jar del servicio interno y su Dockerfile y dos carpetas proxy que contendran los archivos de configuracion .cfg del balanceador y sus respectivos Dockerfiles. La carpeta proxy del balanceador de la apliación contendrá también el certificado para que esta pueda ejecutarse con seguridad mediante HTTPS.
-El docker-compose facilitado se encarga de conectar los distintos contenedores y hacer que se ejecuten controlando la ejecucion en base a las dependencias que tienen entre ellos.
+Para generar el compose, se deberá emplazar todo el contenido en una carpeta, que contendrá el .jar de la aplicación con su Dockerfile, una carpeta con el .jar del servicio interno y su Dockerfile y dos carpetas proxy que contendran los archivos de configuracion .cfg del balanceador y sus respectivos Dockerfiles. La carpeta proxy del balanceador de la apliación contendrá también el certificado para que esta pueda ejecutarse con seguridad mediante HTTPS.
+El docker-compose se encarga de conectar los distintos contenedores controlando la ejecucion en base a las dependencias que tienen entre ellos.
 
 Para levantar este compose que contiene dos instancias de la aplicación, su balanceador, la base de datos, y dos instancias del servicio interno, también con su balanceador se debe utiliza el comando: sudo docker-compose up --build
+
+Pueden servir de ejemplos los archivos descritos en la carpeta Dockerización.
 
 
 ## Equipo de desarrollo:
