@@ -1,6 +1,50 @@
+  version: '2'
+services:
+ hsdb_docker:
+  image: mysql:5.7.19
+  container_name: hsdb_docker
+  networks:
+   hs_net:
+    ipv4_address: 172.20.0.2
+  environment:
+   - MYSQL_ROOT_PASSWORD=rootPass
+   - MYSQL_DATABASE=hsdb
+   - MYSQL_USER=hsDefaultUser
+   - MYSQL_PASSWORD=rootPass
+  command: mysqld --lower_case_table_names=1 --skip-ssl --character_set_server=utf8
+
+ hs1:
+  build: .
+  image: dad_hs
+  container_name: hs1
+  networks:
+   hs_net:
+    ipv4_address: 172.20.0.3
+  depends_on:
+   - hsdb_docker
+  #expose:
+    #- "8080" # expose the port to other containers, but it's not exposed to the host
+  environment:
+   - SPRING_DATASOURCE_URL=jdbc:mysql://172.20.0.2:3306/hsdb?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
+   - SPRING_JPA_HIBERNATE_DDL-AUTO=update
+   - SPRING.DATASOURCE.USERNAME=hsDefaultUser
+   - SPRING.DATASOURCE.PASSWORD=rootPass
+
+ hs2:
+  build: .
+  image: dad_hs
+  container_name: hs2
+  networks:
+   hs_net:
+    ipv4_address: 172.20.0.4
+  depends_on:
+   - hsdb_docker
+   - hs1
+  #expose:
+   #- "8080"
   environment:
    - SPRING.DATASOURCE.URL=jdbc:mysql://172.20.0.2:3306/hsdb?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
-   - SPRING_JPA_HIBERNATE_DDL-AUTO=none
+   - SPRING_JPA_HIBERNATE_DDL-AUTO=update
    - SPRING.DATASOURCE.USERNAME=hsDefaultUser
    - SPRING.DATASOURCE.PASSWORD=rootPass
 
@@ -59,3 +103,9 @@ networks:
    config:
     - subnet: 172.20.0.0/16
       gateway: 172.20.0.1
+
+
+
+
+
+
