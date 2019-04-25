@@ -123,6 +123,9 @@ Para levantar este compose que contiene dos instancias de la aplicación, su bal
 
 Pueden servir de ejemplos los archivos descritos en la carpeta Dockerización.
 
+## VIDEOS APLICACION
+
+https://youtu.be/Ewo-odWYoIg
 
 ## Equipo de desarrollo:
 
