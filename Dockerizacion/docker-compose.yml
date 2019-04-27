@@ -1,0 +1,115 @@
+version: '2'
+services:
+ hsdb_docker:
+  image: mysql:5.7.19
+  container_name: hsdb_docker
+  networks:
+   hs_net:
+    ipv4_address: 172.20.0.2
+  environment:
+   - MYSQL_ROOT_PASSWORD=rootPass
+   - MYSQL_DATABASE=hsdb
+   - MYSQL_USER=hsDefaultUser
+   - MYSQL_PASSWORD=rootPass
+  command: mysqld --lower_case_table_names=1 --skip-ssl --character_set_server=utf8
+
+ hs1:
+  build: .
+  image: dad_hs
+  container_name: hs1
+  networks:
+   hs_net:
+    ipv4_address: 172.20.0.3
+  depends_on:
+   - hsdb_docker
+  #expose:
+    #- "8080" # expose the port to other containers, but it's not exposed to the host
+  environment:
+   - SPRING_DATASOURCE_URL=jdbc:mysql://172.20.0.2:3306/hsdb?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
+   - SPRING_JPA_HIBERNATE_DDL-AUTO=update
+   - SPRING.DATASOURCE.USERNAME=root
+   - SPRING.DATASOURCE.PASSWORD=rootPass
+
+ hs2:
+  build: .
+  image: dad_hs
+  container_name: hs2
+  networks:
+   hs_net:
+    ipv4_address: 172.20.0.4
+  depends_on:
+   - hsdb_docker
+   - hs1
+  #expose:
+   #- "8080"
+  environment:
+   - SPRING.DATASOURCE.URL=jdbc:mysql://172.20.0.2:3306/hsdb?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
+   - SPRING_JPA_HIBERNATE_DDL-AUTO=update
+   - SPRING.DATASOURCE.USERNAME=root
+   - SPRING.DATASOURCE.PASSWORD=rootPass
+
+ si1:
+  build: ./SI
+  image: dad_serviciointerno
+  container_name: si1
+  networks:
+   hs_net:
+    ipv4_address: 172.20.0.5
+  #expose:
+   #- "8080"
+
+ si2:
+  build: ./SI
+  image: dad_serviciointerno
+  container_name: si2
+  networks:
+   hs_net:
+    ipv4_address: 172.20.0.6
+  #expose:
+   #- "8080"
+  
+ proxyapp:
+  build: ./ProxyApp
+  image: dad_proxyapp_balanceador
+  container_name: hsbalan
+  networks:
+   - hs_net
+  depends_on:
+   - hs1
+   - hs2
+  ports:
+   - "9090:80" # Only service that is exposed to the host is the lb
+   - "8443:8443"
+   
+
+ proxysi:
+  build: ./ProxySI
+  image: dad_siproxy_balanceador
+  container_name: sibalan
+  networks:
+   hs_net:
+    ipv4_address: 172.20.0.7
+  depends_on:
+   - si1
+   - si2
+  expose:
+   - "7000"
+
+
+networks:
+ hs_net:
+  driver: bridge
+  ipam:
+   config:
+    - subnet: 172.20.0.0/16
+      gateway: 172.20.0.1
+
+
+
+
+
+
+
+
+
+
